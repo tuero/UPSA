@@ -1,0 +1,6 @@
+exps-sampling/
+POS/
+data/
+
+*.pyc
+**/__pycache__/*
