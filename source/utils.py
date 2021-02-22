@@ -153,7 +153,6 @@ def appendtext(text, file_name):
 
 def keyword_pos2sta_vec(option,keyword, pos):
     key_ind=[]
-    # pos=pos[:option.num_steps-1]
     pos=pos[:option.num_steps-1]
     for i in range(len(pos)):
         if pos[i]=='NNP':
@@ -175,10 +174,10 @@ def keyword_pos2sta_vec(option,keyword, pos):
             sta_vec.append(0)
     # liuxg
     if np.sum(sta_vec)==0:
-        sta_vec[0] =1
+        sta_vec[0] = 1
     return sta_vec
 
-def read_data_use(option, sen2id):
+def read_data_use(option, sen2id, valid_rows=None):
     """
     Read in text file for input parsing and convert to vector of word ids
     Will also return a boolean vector which indicates which positions are keywords
@@ -195,82 +194,52 @@ def read_data_use(option, sen2id):
         data=[]
         vector=[]
         sta_vec_list=[]
-        for line in f:
+
+
+        for line_number, line in enumerate(f):
+            # Only consider valid rows
+            # This allows us to create a partial dataset which this process will test
+            # so that we can speed up testing on multiple processes
+            if valid_rows != None and line_number not in valid_rows:
+                continue
+
+            # Only consider first 15 words
             if len(line.strip().split())>15:
-                line = ' '.join(line.strip().split()[:15])      # Top 15 words?
-            sta_vec=list(np.zeros([option.num_steps-1]))        # boolean flag of what words in sentence rep keyword?
-            keyword=Rake.run(line.strip())                      # List of (keywords, number)?
-            pos_list=tagger.tag_sentence(line.strip()).split()
-            pos=list(zip(*[x.split('/') for x in pos_list]))[0]
+                line = ' '.join(line.strip().split()[:15])
+
+            # Get list of keywords, and pos
+            keywords = Rake.run(line.strip())                     # List of (keywords, number)?
+            pos_list = tagger.tag_sentence(line.strip()).split()
+            pos = list(zip(*[x.split('/') for x in pos_list]))[0]
 
             # If sentence contains keywords
-            if keyword!=[]:
-                keyword = [v[0] for v in keyword]
-                keyword_new = []
+            if keywords != []:
+                keywords = [v[0] for v in keywords]
+                keyword_indices = []
                 linewords = line.strip().split()
 
                 # A keyword may consist of multiple words
-                # keyword_new will contain all indices which contains the keywords
+                # keyword_indices will contain all indices which contains the keywords
                 for i in range(len(linewords)):
-                    for item in keyword:
-                        length11 = len(item.split())        
-                        if ' '.join(linewords[i:i+length11])==item:
-                            keyword_new.extend([i+k for k in range(length11)])
+                    for key_word in keywords:
+                        keyword_len = len(key_word.split())        
+                        if ' '.join(linewords[i:i+keyword_len]) == key_word:
+                            keyword_indices.extend([i+k for k in range(keyword_len)])
                 
-                # Set the boolean indices 
-                for i in range(len(keyword_new)):
-                    ind=keyword_new[i]
-                    if ind<=option.num_steps-2:
-                        sta_vec[ind]=1
-            if option.keyword_pos==True:
+                # Set the boolean flag indices which represent indicate words in sentence are keywords
+                sta_vec = [int(i in keyword_indices) for i in range(option.num_steps - 1)]
+
+            # With pos being set as index 0, `keyword_pos2sta_vec()` will simply return `sta_vec` as is
+            if option.keyword_pos:
                 sta_vec_list.append(keyword_pos2sta_vec(option, sta_vec, pos))
             else:
-                sta_vec_list.append(list(np.zeros([option.num_steps-1])))
-            data.append(sen2id(line.strip().lower().split()))
-    data_new=array_data(data, max_length, dict_size)
-    return data_new, sta_vec_list # sentence, keyvector
+                sta_vec_list.append([0 for _ in range(option.num_steps -1)])
 
-def read_data_use1(option,  sen2id):
-
-    file_name = option.use_data_path
-    max_length = option.num_steps
-    dict_size = option.dict_size
-    Rake = RAKE.Rake(RAKE.SmartStopList())
-    z=ZPar(option.pos_path)
-    tagger = z.get_tagger()
-    with open(file_name) as f:
-        data=[]
-        vector=[]
-        sta_vec_list=[]
-        j=0
-        for line in f:
-            print('sentence:'+line)
-            sta_vec=list(np.zeros([option.num_steps-1]))
-            keyword=Rake.run(line.strip())
-            pos_list=tagger.tag_sentence(line.strip()).split()
-            # pos=zip(*[x.split('/') for x in pos_list])[0]
-            pos=list(zip(*[x.split('/') for x in pos_list]))[0]
-            print(keyword)
-            if keyword!=[]:
-                keyword=list(list(zip(*keyword))[0])
-                keyword_new=[]
-                for item in keyword:
-                    tem1=[line.strip().split().index(x) for x in item.split() if x in line.strip().split()]
-                    print('id',tem1)
-                    keyword_new.extend(tem1)
-                print(keyword_new)
-                for i in range(len(keyword_new)):
-                    ind=keyword_new[i]
-                    if ind<=option.num_steps-2:
-                        sta_vec[ind]=1
-            if option.keyword_pos==True:
-                sta_vec_list.append(keyword_pos2sta_vec(option,sta_vec,pos))
-            else:
-                sta_vec_list.append(list(np.zeros([option.num_steps-1])))
-            print(keyword_pos2sta_vec(option,sta_vec, pos))        
+            # Convert sentence to word ids
             data.append(sen2id(line.strip().lower().split()))
-    data_new=array_data(data, max_length, dict_size)
-    return data_new, sta_vec_list # sentence, keyvector
+    
+    # Return sentence and keyword vector
+    return array_data(data, max_length, dict_size), sta_vec_list
 
 def sigma_word(x):
     if x>0.7:
@@ -615,7 +584,7 @@ def similarity_keyword_bert_bleu(s1_list, s2, sta_vec, id2sen, emb_word, option,
     def similarity_batch_word(s1, s2, sta_vec, option):
         return np.array([ similarity_word(x,s2,sta_vec, option) for x in s1 ])
 
-def cut_from_point(input, sequence_length, ind,option, mode=0):
+def cut_from_point(input, sequence_length, ind, option, mode=0):
     batch_size=input.shape[0]
     num_steps=input.shape[1]
     input_forward=np.zeros([batch_size, num_steps])+option.dict_size+1

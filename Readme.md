@@ -1,11 +1,11 @@
 # UPSA
 ![](sa.PNG)
 # Requirement
-python==2.7
+python==3.7
 cuda 9.0
 ## python packages
 	nltk
-	TensorFlow == 1.3.0
+	TensorFlow == 1.15.0
 	numpy
 	pickle
 	Rake (pip install python-rake)
@@ -14,10 +14,16 @@ cuda 9.0
 
 
 # run the code:
+```bash
 python -W ignore::UserWarning source/run.py --exps_dir exps-sampling  --exp_name  test   --use_data_path data/quoradata/test.txt --mode kw-bleu  --N_repeat 1  --save_path sa.txt   --batch_size 1 --gpu 0  --search_size 50
 
+python -W ignore::UserWarning source/run.py --exps_dir exps-sampling  --exp_name  test   --use_data_path data/quoradata/c_origin.txt --mode kw-bleu  --N_repeat 1  --save_path sa.txt   --batch_size 1 --gpu 0  --search_size 50
+```
+
 # evaluation script
+```bash
 python  source/evaluate.py --reference_path quora-results/ref.txt  --generated_path  quora-results/gen.txt
+```
 
 # Cite this paper
 ```bash

@@ -88,11 +88,12 @@ def main():
     if not os.path.exists(option.this_expsdir):
         os.makedirs(option.this_expsdir)
 
-
     if option.batch_size==1:
         simulatedAnnealing(option)
     else:
-        simulatedAnnealing_batch(option)
+        # simulatedAnnealing_batch(option)
+        raise ValueError('Unknown batch size option')
+        
 
     print("="*36 + "Finish" + "="*36)
 
