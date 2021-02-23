@@ -72,6 +72,12 @@ def main():
     parser.add_argument('--M_kw', default=8, type=float)
     parser.add_argument('--M_bleu', default=1, type=float)
 
+    # Samples to work on 
+    # This lets us run multiple instances on separate parts of the data 
+    # for added parallelism
+    parser.add_argument('--data_start', default=0.0, type=float)
+    parser.add_argument('--data_end', default=1.0, type=float)
+
     d = vars(parser.parse_args())
     option = Option(d)
 
