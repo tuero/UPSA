@@ -6,7 +6,8 @@ from nltk.translate.bleu_score import corpus_bleu
 import nltk
 from utils import appendtext
 import numpy as np
-#from rouge import Rouge
+from pythonrouge.pythonrouge import Pythonrouge
+from rouge import Rouge
 #import rouge
 
 class Option(object):
@@ -26,11 +27,14 @@ def main():
     parser.add_argument('--mode', default='bleu', type=str)
     parser.add_argument('--reference_path', default=None, type=str)
     parser.add_argument('--generated_path', default=None, type=str)
+    parser.add_argument('--input_path', default=None, type=str)
 
     d = vars(parser.parse_args())
     option = Option(d)
     if option.mode == 'bleu':
         evaluate_bleu(option.reference_path, option.generated_path)
+    elif option.mode == 'ibleu':
+        evaluate_ibleu(option.reference_path, option.generated_path, option.input_path)
     elif option.mode == 'bleu_c':
         evaluate_bleu_corpus(option.reference_path, option.generated_path)
     elif option.mode == 'bleu2':
@@ -88,6 +92,47 @@ def evaluate_bleu(reference_path, generated_path):
                 actual_word_lists, generated_word_lists) ]
     print('sentence level bleu', np.mean(bleu_scores))
 
+
+def evaluate_ibleu(reference_path, generated_path, input_path):
+    # Evaluate model scores
+    actual_word_lists = []  #reference
+    with open(reference_path) as f:
+        for line in f:
+            if '#' in line:
+                sents = line.strip().lower().split('#')
+                actual_word_lists.append([x.split() for x in sents])
+            else:
+                actual_word_lists.append([line.strip().lower().split()])
+
+    generated_word_lists = []  #generated
+    with open(generated_path) as f:
+        for line in f:
+            generated_word_lists.append(line.strip().lower().split())
+
+    input_word_lists = []  #input
+    with open(input_path) as f:
+        for line in f:
+            if '#' in line:
+                sents = line.strip().lower().split('#')
+                input_word_lists.append([x.split() for x in sents])
+            else:
+                input_word_lists.append([line.strip().lower().split()])
+
+    actual_word_lists = actual_word_lists[:len(generated_word_lists)]
+    input_word_lists = input_word_lists[:len(generated_word_lists)]
+
+    ref_gen_bleu_scores = [nltk.translate.bleu_score.sentence_bleu(a,g,
+        smoothing_function=nltk.translate.bleu_score.SmoothingFunction().method1) for a,g in zip(\
+                actual_word_lists, generated_word_lists) ]
+
+    input_gen_bleu_scores = [nltk.translate.bleu_score.sentence_bleu(a,g,
+        smoothing_function=nltk.translate.bleu_score.SmoothingFunction().method1) for a,g in zip(\
+                input_word_lists, generated_word_lists) ]
+
+    ibleu_scores = 0.9 * np.mean(ref_gen_bleu_scores) - 0.1 * np.mean(input_gen_bleu_scores)
+    print('sentence level ibleu', ibleu_scores)
+
+
 def evaluate_bleu2(reference_path, generated_path):
     # Evaluate model scores
     actual_word_lists = []
@@ -137,6 +182,26 @@ def evaluate_semantic(reference_path, generated_path):
     summation = torch.sum(rep1*rep2,1)/(rep1.norm(2,1)*rep2.norm(2,1))
     print(torch.mean(summation))
 
+def _evaluate_rouge(reference_path, generated_path, multi=True):
+    # Evaluate model scores
+    actual_word_lists = []
+    with open(reference_path) as f:
+        for line in f:
+            if '#' in line:
+                sents = line.strip().lower().split('#')
+                actual_word_lists.append([x for x in sents])
+            else:
+                actual_word_lists.append(line.strip().lower().split())
+    generated_word_lists = []
+    with open(generated_path) as f:
+        for line in f:
+            generated_word_lists.append(line.strip().lower().split())
+    actual_word_lists = actual_word_lists[:len(generated_word_lists)]
+    print(len(actual_word_lists),len(generated_word_lists))
+    rouge = Rouge()
+    scores = rouge.get_scores(generated_word_lists, actual_word_lists)
+    print(scores)
+
 def evaluate_rouge(reference_path, generated_path, multi=True):
     # Evaluate model scores
     actual_word_lists = []
@@ -159,8 +224,8 @@ def evaluate_rouge(reference_path, generated_path, multi=True):
         print('Evaluation with {}'.format(aggregator))
         apply_avg = aggregator == 'Avg'
         apply_best = aggregator == 'Best'
-        import rouge
-        evaluator = rouge.Rouge(metrics=['rouge-n', 'rouge-l', 'rouge-w'],
+
+        evaluator = Rouge(metrics=['rouge-n', 'rouge-l', 'rouge-w'],
                                max_n=4,
                                limit_length=True,
                                length_limit=100,
@@ -173,6 +238,7 @@ def evaluate_rouge(reference_path, generated_path, multi=True):
         all_hypothesis  = generated_word_lists
         all_references = actual_word_lists
         scores = evaluator.get_scores(all_hypothesis, all_references)
+
 
         for metric, results in sorted(scores.items(), key=lambda x: x[0]):
             if not apply_avg and not apply_best: # value is a type of list as we evaluate each summary vs each reference
@@ -188,15 +254,15 @@ def evaluate_rouge(reference_path, generated_path, multi=True):
 
 
 
-        rouge = Pythonrouge(summary_file_exist=False,
-                        summary=generated_word_lists, reference=actual_word_lists,
-                        n_gram=2, ROUGE_SU4=True, ROUGE_L=False,
-                        recall_only=True, stemming=True, stopwords=True,
-                        word_level=True, length_limit=True, length=50,
-                        use_cf=False, cf=95, scoring_formula='average',
-                        resampling=True, samples=1000, favor=True, p=0.5)
-        score = rouge.calc_score()
-        print(score)
+        # rouge = Pythonrouge(summary_file_exist=False,
+        #                 summary=generated_word_lists, reference=actual_word_lists,
+        #                 n_gram=2, ROUGE_SU4=True, ROUGE_L=False,
+        #                 recall_only=True, stemming=True, stopwords=True,
+        #                 word_level=True, length_limit=True, length=50,
+        #                 use_cf=False, cf=95, scoring_formula='average',
+        #                 resampling=True, samples=1000, favor=True, p=0.5)
+        # score = rouge.calc_score()
+        # print(score)
 
 def prepare_results(m, p, r, f):
     return '\t{}:\t{}: {:5.2f}\t{}: {:5.2f}\t{}: {:5.2f}'.format(m, 'P', 100.0 * p, 'R', 100.0 * r, 'F1', 100.0 * f)

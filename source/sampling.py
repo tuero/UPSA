@@ -100,7 +100,6 @@ def simulatedAnnealing(config):
     print('Operating in range of [{}, {})'.format(idx_start, idx_end))
     
     # Loop for each sentence 
-    # for sen_id in range(use_data.length):
     for sen_id in range(idx_start, idx_end):
         sta_vec = sta_vec_list[sen_id]
         input, sequence_length, _ = use_data(1, sen_id)

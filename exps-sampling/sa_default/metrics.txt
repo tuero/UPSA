@@ -1,0 +1,9 @@
+sentence level bleu 0.18678822512978532
+sentence level ibleu 0.12348256158619603
+Evaluation with Avg
+        rouge-1:        P: 56.10        R: 59.66        F1: 56.84
+        rouge-2:        P: 30.88        R: 32.71        F1: 31.15
+        rouge-3:        P: 18.39        R: 19.41        F1: 18.46
+        rouge-4:        P: 11.26        R: 11.81        F1: 11.23
+        rouge-l:        P: 58.51        R: 61.64        F1: 59.31
+        rouge-w:        P: 48.41        R: 33.31        F1: 38.64
