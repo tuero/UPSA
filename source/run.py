@@ -10,7 +10,7 @@ def main():
     parser = argparse.ArgumentParser(description="Experiment setup")
     # misc
     parser.add_argument('--seed', default=33, type=int)
-    parser.add_argument('--gpu', default="3", type=str)
+    parser.add_argument('--gpu', default="0", type=str)
     parser.add_argument('--no_train', default=False, action="store_true")
     parser.add_argument('--exps_dir', default=None, type=str)
     parser.add_argument('--exp_name', default=None, type=str)
@@ -75,8 +75,9 @@ def main():
     # Samples to work on 
     # This lets us run multiple instances on separate parts of the data 
     # for added parallelism
-    parser.add_argument('--data_start', default=0.0, type=float)
-    parser.add_argument('--data_end', default=1.0, type=float)
+    parser.add_argument('--data_start', default=0, type=int)
+    parser.add_argument('--data_end', default=-1, type=int)
+    parser.add_argument('--alg', default="sa", type=str)
 
     d = vars(parser.parse_args())
     option = Option(d)
@@ -94,11 +95,12 @@ def main():
     if not os.path.exists(option.this_expsdir):
         os.makedirs(option.this_expsdir)
 
-    if option.batch_size==1:
+    if option.alg.lower() == "sa":
         simulatedAnnealing(option)
+    elif option.alg.lower() == "mcts":
+        runMCTS(option)
     else:
-        # simulatedAnnealing_batch(option)
-        raise ValueError('Unknown batch size option')
+        raise ValueError('Unknown algorithm option')
         
 
     print("="*36 + "Finish" + "="*36)

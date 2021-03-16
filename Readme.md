@@ -22,7 +22,7 @@ python -W ignore::UserWarning source/run.py --exps_dir exps-sampling  --exp_name
 
 # evaluation script
 ```bash
-python  source/evaluate.py --reference_path quora-results/ref.txt  --generated_path  quora-results/gen.txt
+python  source/evaluate.py --reference_path quora-results/ref.txt --input_path data/quoradata/c_origin.txt --generated_path quora-results/gen.txt
 ```
 
 # Cite this paper
