@@ -296,9 +296,9 @@ def sigmoid(x):
 def sen2mat(s, id2sen, emb_word, option):
     mat=[]
     for item in s:
-        if item==option.dict_size+2:
+        if item==option.dict_size+2:            # BOS
             continue
-        if item==option.dict_size+1:
+        if item==option.dict_size+1:            # EOS
             break
         word=id2sen([item])[0]
         if  word in emb_word:

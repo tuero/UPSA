@@ -3,3 +3,7 @@ data/
 
 *.pyc
 **/__pycache__/*
+
+*events.out.tfevents*
+.ipynb_checkpoints
+*.pt

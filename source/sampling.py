@@ -468,6 +468,26 @@ class MCTS():
 
         raise Exception("No valid children, shouldn't get here.")
 
+    def _expand(self, node):
+        # generate all children
+        # child.count = 0
+        # child.value = policy_value
+        # child.isFullyExpanded = False
+        # node.isFullyExpanded = True
+        pass
+
+    def _select(self, node):
+        while not node.isTerminal:
+            if node.isFullyExpanded:
+                node = self._selection_policy(node)
+            elif node.numVisits == 0:
+                return node
+            else:
+                return self.expand(node)
+        return node
+
+        pass
+
     def backpropogate(self, node, reward):
         while node is not None:
             node.numVisits += 1
