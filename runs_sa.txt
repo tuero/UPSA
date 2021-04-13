@@ -1,0 +1,4 @@
+python -W ignore::UserWarning source/run.py --exps_dir exps-sampling --exp_name sa_default --use_data_path data/quoradata/c_origin.txt --mode kw-bleu  --save_path sa_1.txt --alg sa --search_size 50 --data_start 0 --data_end 250
+python -W ignore::UserWarning source/run.py --exps_dir exps-sampling --exp_name sa_default --use_data_path data/quoradata/c_origin.txt --mode kw-bleu  --save_path sa_2.txt --alg sa --search_size 50 --data_start 250 --data_end 500
+python -W ignore::UserWarning source/run.py --exps_dir exps-sampling --exp_name sa_default --use_data_path data/quoradata/c_origin.txt --mode kw-bleu  --save_path sa_3.txt --alg sa --search_size 50 --data_start 500 --data_end 750
+python -W ignore::UserWarning source/run.py --exps_dir exps-sampling --exp_name sa_default --use_data_path data/quoradata/c_origin.txt --mode kw-bleu  --save_path sa_4.txt --alg sa --search_size 50 --data_start 750 --data_end 1000

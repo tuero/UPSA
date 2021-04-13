@@ -1,7 +1,9 @@
 import os
 import numpy as np
-import time, random
-from sampling import *
+import time
+import random
+import logging
+from sampling import simulatedAnnealing, runMCTS
 import argparse
 from utils import Option
 
@@ -80,6 +82,7 @@ def main():
     parser.add_argument("--data_end", default=-1, type=int)
     parser.add_argument("--alg", default="sa", type=str)
     parser.add_argument("--use_val_function", default=False, action="store_true")
+    parser.add_argument("--exploration_constant", default=1.44, type=float)
 
     d = vars(parser.parse_args())
     option = Option(d)
@@ -96,6 +99,16 @@ def main():
     option.this_expsdir = os.path.join(option.exps_dir, option.tag)
     if not os.path.exists(option.this_expsdir):
         os.makedirs(option.this_expsdir)
+
+    if not os.path.exists("logs/{}".format(option.exp_name)):
+        os.makedirs("logs/{}".format(option.exp_name))
+
+    logger = logging.getLogger()
+    fhandler = logging.FileHandler(filename="logs/{}/{}.log".format(option.exp_name, option.save_path[:-4]))
+    formatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s]  %(message)s")
+    fhandler.setFormatter(formatter)
+    logger.addHandler(fhandler)
+    logger.setLevel(logging.DEBUG)
 
     if option.alg.lower() == "sa":
         simulatedAnnealing(option)

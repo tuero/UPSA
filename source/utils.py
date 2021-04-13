@@ -460,7 +460,12 @@ def similarity_keyword_bleu_tensor(s1_list, s2, sta_vec, id2sen, emb_word, optio
     norm1 = torch.diag_embed(norm1)
     sim_mat = torch.bmm(torch.bmm(norm2, emb_mat), norm1) # K,8,7
     sim_vec,_ = torch.max(sim_mat,2)  # K,8
-    sim,_ = torch.min(sim_vec[:,wei2],1)
+    try:
+        sim,_ = torch.min(sim_vec[:,wei2] if sim_vec[:,wei2].nelement() > 0 else torch.ones([1,1]) ,1)
+    except:
+        print(sim_vec[:,wei2])
+        print(sim_vec[:,wei2].shape)
+        exit()
     sim = np.power(sim.numpy(), M_kw)
 
     for s1 in s1_list:
@@ -660,7 +665,7 @@ def generate_candidate_input_batch(input, sequence_length, ind, prob, search_siz
     return input_new.astype(np.int32), sequence_length_new.astype(np.int32)
 
 def generate_candidate_input_calibrated(input, sequence_length, ind, prob, searching_size, option,\
-        mode=0, calibrated_set = None):
+        mode=0, calibrated_set = None, verbose=False):
     search_size = searching_size
     if mode!=2:
         if calibrated_set is None:
@@ -676,8 +681,12 @@ def generate_candidate_input_calibrated(input, sequence_length, ind, prob, searc
     if mode==2:
         for i in range(sequence_length[0]-ind-2):
             input_new[: , ind+i+1]=input_new[: , ind+i+2]
+        # for i in range(ind + 1, sequence_length[0] - 1):
+        #     input_new[: , i] = input_new[: , i + 1]
+         
         for i in range(sequence_length[0]-1, option.num_steps):
             input_new[: , i]=input_new[: , i]*0+option.dict_size+1
+
         sequence_length_new=sequence_length_new-1
         return input_new[:1], sequence_length_new[:1]
     if mode==1:

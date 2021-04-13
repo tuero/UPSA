@@ -1,0 +1,1044 @@
+2021-04-06 16:33:37,435 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/sampling.py:72: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+2021-04-06 16:33:37,435 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:103: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2021-04-06 16:33:37,436 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:107: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+2021-04-06 16:33:37,450 [WARNI]  
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+2021-04-06 16:33:37,839 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:117: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+2021-04-06 16:33:37,848 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:135: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+2021-04-06 16:33:38,049 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:138: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+2021-04-06 16:33:38,049 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/models.py:141: The name tf.train.get_or_create_global_step is deprecated. Please use tf.compat.v1.train.get_or_create_global_step instead.
+
+2021-04-06 16:33:38,415 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/sampling.py:79: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+2021-04-06 16:33:39,104 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/sampling.py:90: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+2021-04-06 16:33:39,421 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/sampling.py:95: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-04-06 16:33:39,421 [WARNI]  From /home/tuero/Documents/cmput-651/project/UPSA/source/sampling.py:97: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-04-06 16:33:42,844 [INFO ]  Restoring parameters from data/tfmodel/forward.ckpt
+2021-04-06 16:33:42,955 [INFO ]  Restoring parameters from data/tfmodel/backward.ckpt
+2021-04-06 16:33:52,082 [INFO ]  [0.0303 0.03   0.0297 0.0294 0.0291 0.0288 0.0285 0.0282 0.0279 0.0276
+ 0.0273 0.027  0.0267 0.0264 0.0261 0.0258 0.0255 0.0252 0.0249 0.0246
+ 0.0243 0.024  0.0237 0.0234 0.0231 0.0228 0.0225 0.0222 0.0219 0.0216
+ 0.0213 0.021  0.0207 0.0204 0.0201 0.0198 0.0195 0.0192 0.0189 0.0186
+ 0.0183 0.018  0.0177 0.0174 0.0171 0.0168 0.0165 0.0162 0.0159 0.0156
+ 0.0153 0.015  0.0147 0.0144 0.0141 0.0138 0.0135 0.0132 0.0129 0.0126
+ 0.0123 0.012  0.0117 0.0114 0.0111 0.0108 0.0105 0.0102 0.0099 0.0096
+ 0.0093 0.009  0.0087 0.0084 0.0081 0.0078 0.0075 0.0072 0.0069 0.0066
+ 0.0063 0.006  0.0057 0.0054 0.0051 0.0048 0.0045 0.0042 0.0039 0.0036
+ 0.0033 0.003  0.0027 0.0024 0.0021 0.0018 0.0015 0.0012 0.0009 0.0006]
+2021-04-06 16:33:52,084 [INFO ]  Operating in range of [250, 500)
+2021-04-06 16:33:52,084 [INFO ]  ----------------
+2021-04-06 16:33:52,084 [INFO ]  Item 250 of 20000
+2021-04-06 16:33:52,084 [INFO ]  how will black money and corruption be stopped by banning 500 and 1000 notes
+2021-04-06 16:33:52,084 [INFO ]  [0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0]
+2021-04-06 16:33:56,918 [INFO ]  ----------------
+2021-04-06 16:33:56,918 [INFO ]  Item 251 of 20000
+2021-04-06 16:33:56,918 [INFO ]  what are the best apps for digital payments
+2021-04-06 16:33:56,918 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:34:01,214 [INFO ]  ----------------
+2021-04-06 16:34:01,214 [INFO ]  Item 252 of 20000
+2021-04-06 16:34:01,214 [INFO ]  what would happen if donald trump became our next president
+2021-04-06 16:34:01,215 [INFO ]  [0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:34:07,006 [INFO ]  ----------------
+2021-04-06 16:34:07,006 [INFO ]  Item 253 of 20000
+2021-04-06 16:34:07,007 [INFO ]  what is the best and quickest way to get rid of man boobs
+2021-04-06 16:34:07,007 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0]
+2021-04-06 16:34:10,103 [INFO ]  ----------------
+2021-04-06 16:34:10,103 [INFO ]  Item 254 of 20000
+2021-04-06 16:34:10,103 [INFO ]  what would be the scenario if pakistan secretly drops a nuclear bomb in india
+2021-04-06 16:34:10,103 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1]
+2021-04-06 16:34:13,666 [INFO ]  ----------------
+2021-04-06 16:34:13,666 [INFO ]  Item 255 of 20000
+2021-04-06 16:34:13,666 [INFO ]  what is the best topic for a cs final year project
+2021-04-06 16:34:13,666 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0]
+2021-04-06 16:34:19,382 [INFO ]  ----------------
+2021-04-06 16:34:19,382 [INFO ]  Item 256 of 20000
+2021-04-06 16:34:19,382 [INFO ]  where can i find best hotel in nawalgarh
+2021-04-06 16:34:19,382 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:34:24,150 [INFO ]  ----------------
+2021-04-06 16:34:24,151 [INFO ]  Item 257 of 20000
+2021-04-06 16:34:24,151 [INFO ]  what are some ways by which a student can earn money in college
+2021-04-06 16:34:24,151 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0]
+2021-04-06 16:34:27,276 [INFO ]  ----------------
+2021-04-06 16:34:27,276 [INFO ]  Item 258 of 20000
+2021-04-06 16:34:27,276 [INFO ]  what does queen elizabeth keep in her handbag
+2021-04-06 16:34:27,276 [INFO ]  [0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:34:32,243 [INFO ]  ----------------
+2021-04-06 16:34:32,243 [INFO ]  Item 259 of 20000
+2021-04-06 16:34:32,243 [INFO ]  is it possible to dig a hole up to core of earth
+2021-04-06 16:34:32,243 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0]
+2021-04-06 16:34:36,280 [INFO ]  ----------------
+2021-04-06 16:34:36,281 [INFO ]  Item 260 of 20000
+2021-04-06 16:34:36,281 [INFO ]  did the fbi do a proper investigation of whether hillary clinton mishandled classified information
+2021-04-06 16:34:36,281 [INFO ]  [0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0]
+2021-04-06 16:34:40,305 [INFO ]  ----------------
+2021-04-06 16:34:40,305 [INFO ]  Item 261 of 20000
+2021-04-06 16:34:40,305 [INFO ]  why does decimal expansion for k / 7 look like 1 / 7 with
+2021-04-06 16:34:40,305 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0]
+2021-04-06 16:34:44,521 [INFO ]  ----------------
+2021-04-06 16:34:44,521 [INFO ]  Item 262 of 20000
+2021-04-06 16:34:44,521 [INFO ]  how do i make best use of flipkart big billion days 2016
+2021-04-06 16:34:44,521 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0]
+2021-04-06 16:34:48,649 [INFO ]  ----------------
+2021-04-06 16:34:48,649 [INFO ]  Item 263 of 20000
+2021-04-06 16:34:48,649 [INFO ]  i want to commit suicide . what is the easiest way
+2021-04-06 16:34:48,650 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:34:54,416 [INFO ]  ----------------
+2021-04-06 16:34:54,421 [INFO ]  Item 264 of 20000
+2021-04-06 16:34:54,422 [INFO ]  why is quora much popular in india compared to other countries
+2021-04-06 16:34:54,422 [INFO ]  [0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:34:59,445 [INFO ]  ----------------
+2021-04-06 16:34:59,450 [INFO ]  Item 265 of 20000
+2021-04-06 16:34:59,450 [INFO ]  is hookah smoking harmful and addictive
+2021-04-06 16:34:59,450 [INFO ]  [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:35:03,798 [INFO ]  ----------------
+2021-04-06 16:35:03,798 [INFO ]  Item 266 of 20000
+2021-04-06 16:35:03,798 [INFO ]  how did you know you found the one
+2021-04-06 16:35:03,798 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:35:08,674 [INFO ]  ----------------
+2021-04-06 16:35:08,674 [INFO ]  Item 267 of 20000
+2021-04-06 16:35:08,674 [INFO ]  america is divided into how many classes of people
+2021-04-06 16:35:08,674 [INFO ]  [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:35:12,915 [INFO ]  ----------------
+2021-04-06 16:35:12,915 [INFO ]  Item 268 of 20000
+2021-04-06 16:35:12,915 [INFO ]  what should i eat to gain weight
+2021-04-06 16:35:12,915 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:35:16,958 [INFO ]  ----------------
+2021-04-06 16:35:16,958 [INFO ]  Item 269 of 20000
+2021-04-06 16:35:16,958 [INFO ]  is there app to see who viewed your pictures on instagram
+2021-04-06 16:35:16,958 [INFO ]  [0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:35:22,219 [INFO ]  ----------------
+2021-04-06 16:35:22,219 [INFO ]  Item 270 of 20000
+2021-04-06 16:35:22,220 [INFO ]  how do i see who i ' m following on quora
+2021-04-06 16:35:22,220 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:35:27,385 [INFO ]  ----------------
+2021-04-06 16:35:27,385 [INFO ]  Item 271 of 20000
+2021-04-06 16:35:27,386 [INFO ]  what are the functions of a computer 's motherboard
+2021-04-06 16:35:27,386 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:35:31,490 [INFO ]  ----------------
+2021-04-06 16:35:31,495 [INFO ]  Item 272 of 20000
+2021-04-06 16:35:31,496 [INFO ]  why do governments pursue UNK gdp growth is a stagnant economy really that terrible
+2021-04-06 16:35:31,496 [INFO ]  [0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:35:35,003 [INFO ]  ----------------
+2021-04-06 16:35:35,003 [INFO ]  Item 273 of 20000
+2021-04-06 16:35:35,003 [INFO ]  what are the best ways to lose a lot of weight as quickly as
+2021-04-06 16:35:35,003 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+2021-04-06 16:35:39,948 [INFO ]  ----------------
+2021-04-06 16:35:39,948 [INFO ]  Item 274 of 20000
+2021-04-06 16:35:39,948 [INFO ]  how should i prepare to get selected for google summer of code .
+2021-04-06 16:35:39,948 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0]
+2021-04-06 16:35:43,844 [INFO ]  ----------------
+2021-04-06 16:35:43,844 [INFO ]  Item 275 of 20000
+2021-04-06 16:35:43,844 [INFO ]  where can i get a huge choice of high quality wall and floor tiles
+2021-04-06 16:35:43,844 [INFO ]  [0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1]
+2021-04-06 16:35:47,147 [INFO ]  ----------------
+2021-04-06 16:35:47,147 [INFO ]  Item 276 of 20000
+2021-04-06 16:35:47,148 [INFO ]  why do i get so many headaches
+2021-04-06 16:35:47,148 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:35:51,440 [INFO ]  ----------------
+2021-04-06 16:35:51,440 [INFO ]  Item 277 of 20000
+2021-04-06 16:35:51,440 [INFO ]  how do i get over the trauma of a breakup
+2021-04-06 16:35:51,440 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:35:56,560 [INFO ]  ----------------
+2021-04-06 16:35:56,560 [INFO ]  Item 278 of 20000
+2021-04-06 16:35:56,560 [INFO ]  what 's a good book to self study topology
+2021-04-06 16:35:56,560 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:36:02,040 [INFO ]  ----------------
+2021-04-06 16:36:02,040 [INFO ]  Item 279 of 20000
+2021-04-06 16:36:02,040 [INFO ]  what is the best time or age for a man to get married
+2021-04-06 16:36:02,040 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0]
+2021-04-06 16:36:05,958 [INFO ]  ----------------
+2021-04-06 16:36:05,959 [INFO ]  Item 280 of 20000
+2021-04-06 16:36:05,959 [INFO ]  how would you consider robin hood a hero and a UNK
+2021-04-06 16:36:05,959 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:36:11,914 [INFO ]  ----------------
+2021-04-06 16:36:11,920 [INFO ]  Item 281 of 20000
+2021-04-06 16:36:11,920 [INFO ]  why do people make noises during sex
+2021-04-06 16:36:11,920 [INFO ]  [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:16,121 [INFO ]  ----------------
+2021-04-06 16:36:16,121 [INFO ]  Item 282 of 20000
+2021-04-06 16:36:16,121 [INFO ]  can you pls suggest me a guy stage name for music
+2021-04-06 16:36:16,121 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:36:21,365 [INFO ]  ----------------
+2021-04-06 16:36:21,365 [INFO ]  Item 283 of 20000
+2021-04-06 16:36:21,365 [INFO ]  what are the safety precautions on handling shotguns proposed by the nra in florida
+2021-04-06 16:36:21,365 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1]
+2021-04-06 16:36:25,221 [INFO ]  ----------------
+2021-04-06 16:36:25,221 [INFO ]  Item 284 of 20000
+2021-04-06 16:36:25,222 [INFO ]  what is the best browser for facebook
+2021-04-06 16:36:25,222 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:29,500 [INFO ]  ----------------
+2021-04-06 16:36:29,500 [INFO ]  Item 285 of 20000
+2021-04-06 16:36:29,500 [INFO ]  why don 't politician have retirement
+2021-04-06 16:36:29,500 [INFO ]  [0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:33,471 [INFO ]  ----------------
+2021-04-06 16:36:33,472 [INFO ]  Item 286 of 20000
+2021-04-06 16:36:33,472 [INFO ]  what are your top 10 favorite albums
+2021-04-06 16:36:33,472 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:37,861 [INFO ]  ----------------
+2021-04-06 16:36:37,861 [INFO ]  Item 287 of 20000
+2021-04-06 16:36:37,861 [INFO ]  how can i make the most out of my teenage years
+2021-04-06 16:36:37,861 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:36:41,015 [INFO ]  ----------------
+2021-04-06 16:36:41,015 [INFO ]  Item 288 of 20000
+2021-04-06 16:36:41,016 [INFO ]  how can someone predict the future
+2021-04-06 16:36:41,016 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:44,705 [INFO ]  ----------------
+2021-04-06 16:36:44,705 [INFO ]  Item 289 of 20000
+2021-04-06 16:36:44,705 [INFO ]  why is donald trump still hiding his tax records
+2021-04-06 16:36:44,705 [INFO ]  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:36:49,760 [INFO ]  ----------------
+2021-04-06 16:36:49,760 [INFO ]  Item 290 of 20000
+2021-04-06 16:36:49,760 [INFO ]  why does manaphy cry annoyingly in pokemon ranger and the temple of the sea
+2021-04-06 16:36:49,760 [INFO ]  [0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1]
+2021-04-06 16:36:53,659 [INFO ]  ----------------
+2021-04-06 16:36:53,659 [INFO ]  Item 291 of 20000
+2021-04-06 16:36:53,659 [INFO ]  are girls or guys more likely to be vegetarian
+2021-04-06 16:36:53,659 [INFO ]  [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:36:58,767 [INFO ]  ----------------
+2021-04-06 16:36:58,767 [INFO ]  Item 292 of 20000
+2021-04-06 16:36:58,767 [INFO ]  what incident made you cry in public
+2021-04-06 16:36:58,767 [INFO ]  [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:37:02,272 [INFO ]  ----------------
+2021-04-06 16:37:02,272 [INFO ]  Item 293 of 20000
+2021-04-06 16:37:02,272 [INFO ]  what are the best programming blogs
+2021-04-06 16:37:02,272 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:37:06,071 [INFO ]  ----------------
+2021-04-06 16:37:06,072 [INFO ]  Item 294 of 20000
+2021-04-06 16:37:06,072 [INFO ]  what 's good song for a best friend lyric prank
+2021-04-06 16:37:06,072 [INFO ]  [0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:37:11,907 [INFO ]  ----------------
+2021-04-06 16:37:11,907 [INFO ]  Item 295 of 20000
+2021-04-06 16:37:11,907 [INFO ]  what is the best way to prepare for bitsat 2018
+2021-04-06 16:37:11,907 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:37:16,762 [INFO ]  ----------------
+2021-04-06 16:37:16,762 [INFO ]  Item 296 of 20000
+2021-04-06 16:37:16,762 [INFO ]  how can i connect to vc firms or angel investors
+2021-04-06 16:37:16,762 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:37:22,440 [INFO ]  ----------------
+2021-04-06 16:37:22,440 [INFO ]  Item 297 of 20000
+2021-04-06 16:37:22,440 [INFO ]  why , or why not , should the minimum wage be raised to $
+2021-04-06 16:37:22,440 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1]
+2021-04-06 16:37:26,079 [INFO ]  ----------------
+2021-04-06 16:37:26,079 [INFO ]  Item 298 of 20000
+2021-04-06 16:37:26,079 [INFO ]  what 's the difference between infatuation and real love
+2021-04-06 16:37:26,080 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:37:30,942 [INFO ]  ----------------
+2021-04-06 16:37:30,943 [INFO ]  Item 299 of 20000
+2021-04-06 16:37:30,943 [INFO ]  is washing hair everyday with shampoo harmful
+2021-04-06 16:37:30,943 [INFO ]  [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:37:35,195 [INFO ]  ----------------
+2021-04-06 16:37:35,195 [INFO ]  Item 300 of 20000
+2021-04-06 16:37:35,195 [INFO ]  daniel ek : why hasn 't spotify come to india yet when is it
+2021-04-06 16:37:35,195 [INFO ]  [1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:37:38,796 [INFO ]  ----------------
+2021-04-06 16:37:38,796 [INFO ]  Item 301 of 20000
+2021-04-06 16:37:38,796 [INFO ]  what are the some lesser known fact about indian railways
+2021-04-06 16:37:38,796 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:37:43,209 [INFO ]  ----------------
+2021-04-06 16:37:43,209 [INFO ]  Item 302 of 20000
+2021-04-06 16:37:43,209 [INFO ]  does fan have post credits scenes
+2021-04-06 16:37:43,209 [INFO ]  [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:37:47,208 [INFO ]  ----------------
+2021-04-06 16:37:47,208 [INFO ]  Item 303 of 20000
+2021-04-06 16:37:47,208 [INFO ]  how would life be after death
+2021-04-06 16:37:47,208 [INFO ]  [0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:37:51,083 [INFO ]  ----------------
+2021-04-06 16:37:51,083 [INFO ]  Item 304 of 20000
+2021-04-06 16:37:51,083 [INFO ]  what are some sad and emotional songs that could make me cry
+2021-04-06 16:37:51,083 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0]
+2021-04-06 16:37:57,010 [INFO ]  ----------------
+2021-04-06 16:37:57,016 [INFO ]  Item 305 of 20000
+2021-04-06 16:37:57,016 [INFO ]  what are the benefits of becoming an ias officer
+2021-04-06 16:37:57,016 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:38:01,940 [INFO ]  ----------------
+2021-04-06 16:38:01,941 [INFO ]  Item 306 of 20000
+2021-04-06 16:38:01,941 [INFO ]  how can i forget someone whom i loved so deeply
+2021-04-06 16:38:01,941 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:38:06,896 [INFO ]  ----------------
+2021-04-06 16:38:06,896 [INFO ]  Item 307 of 20000
+2021-04-06 16:38:06,897 [INFO ]  what is the best digital marketing course in mumbai
+2021-04-06 16:38:06,897 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:38:12,122 [INFO ]  ----------------
+2021-04-06 16:38:12,127 [INFO ]  Item 308 of 20000
+2021-04-06 16:38:12,127 [INFO ]  why do i get easily bored with everything
+2021-04-06 16:38:12,128 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:38:17,044 [INFO ]  ----------------
+2021-04-06 16:38:17,044 [INFO ]  Item 309 of 20000
+2021-04-06 16:38:17,044 [INFO ]  what are some of the top paying career options after doing a b .
+2021-04-06 16:38:17,044 [INFO ]  [0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:38:21,243 [INFO ]  ----------------
+2021-04-06 16:38:21,243 [INFO ]  Item 310 of 20000
+2021-04-06 16:38:21,243 [INFO ]  what is the scope for supply chain management in usa
+2021-04-06 16:38:21,243 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:38:26,111 [INFO ]  ----------------
+2021-04-06 16:38:26,112 [INFO ]  Item 311 of 20000
+2021-04-06 16:38:26,112 [INFO ]  how is the mass of the neutron determined
+2021-04-06 16:38:26,112 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:38:29,938 [INFO ]  ----------------
+2021-04-06 16:38:29,938 [INFO ]  Item 312 of 20000
+2021-04-06 16:38:29,938 [INFO ]  which is more important : competition or cooperation
+2021-04-06 16:38:29,938 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:38:34,068 [INFO ]  ----------------
+2021-04-06 16:38:34,069 [INFO ]  Item 313 of 20000
+2021-04-06 16:38:34,069 [INFO ]  which is best cricketer all over
+2021-04-06 16:38:34,069 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:38:37,774 [INFO ]  ----------------
+2021-04-06 16:38:37,774 [INFO ]  Item 314 of 20000
+2021-04-06 16:38:37,774 [INFO ]  why do people on quora ask silly questions about the facts which can be
+2021-04-06 16:38:37,774 [INFO ]  [0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:38:41,400 [INFO ]  ----------------
+2021-04-06 16:38:41,400 [INFO ]  Item 315 of 20000
+2021-04-06 16:38:41,400 [INFO ]  how safe is india for a lone young female traveller
+2021-04-06 16:38:41,400 [INFO ]  [0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:38:46,650 [INFO ]  ----------------
+2021-04-06 16:38:46,650 [INFO ]  Item 316 of 20000
+2021-04-06 16:38:46,650 [INFO ]  gillian anderson : what can we do to help you with your charities
+2021-04-06 16:38:46,650 [INFO ]  [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+2021-04-06 16:38:49,608 [INFO ]  ----------------
+2021-04-06 16:38:49,613 [INFO ]  Item 317 of 20000
+2021-04-06 16:38:49,613 [INFO ]  what fields can i enter after completing a b . tech in mechanical engineering
+2021-04-06 16:38:49,613 [INFO ]  [0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1]
+2021-04-06 16:38:53,311 [INFO ]  ----------------
+2021-04-06 16:38:53,311 [INFO ]  Item 318 of 20000
+2021-04-06 16:38:53,311 [INFO ]  which is the best harry potter film and why
+2021-04-06 16:38:53,311 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:38:58,305 [INFO ]  ----------------
+2021-04-06 16:38:58,305 [INFO ]  Item 319 of 20000
+2021-04-06 16:38:58,305 [INFO ]  what are the perks of dating an australian woman
+2021-04-06 16:38:58,305 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:39:03,771 [INFO ]  ----------------
+2021-04-06 16:39:03,771 [INFO ]  Item 320 of 20000
+2021-04-06 16:39:03,771 [INFO ]  what would be the safest place to live if ww3 breaks out
+2021-04-06 16:39:03,771 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:39:06,789 [INFO ]  ----------------
+2021-04-06 16:39:06,789 [INFO ]  Item 321 of 20000
+2021-04-06 16:39:06,789 [INFO ]  for non native english speakers , which is the hardest accent to understand
+2021-04-06 16:39:06,789 [INFO ]  [0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
+2021-04-06 16:39:10,773 [INFO ]  ----------------
+2021-04-06 16:39:10,779 [INFO ]  Item 322 of 20000
+2021-04-06 16:39:10,779 [INFO ]  how do i make instagram account private
+2021-04-06 16:39:10,779 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:15,872 [INFO ]  ----------------
+2021-04-06 16:39:15,878 [INFO ]  Item 323 of 20000
+2021-04-06 16:39:15,878 [INFO ]  what is a good facebook page name for entertainment and fun
+2021-04-06 16:39:15,878 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:39:20,169 [INFO ]  ----------------
+2021-04-06 16:39:20,169 [INFO ]  Item 324 of 20000
+2021-04-06 16:39:20,169 [INFO ]  which is the best pc game that you have played in 2016
+2021-04-06 16:39:20,169 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0]
+2021-04-06 16:39:23,134 [INFO ]  ----------------
+2021-04-06 16:39:23,134 [INFO ]  Item 325 of 20000
+2021-04-06 16:39:23,134 [INFO ]  what are best alternatives to quora
+2021-04-06 16:39:23,134 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:26,940 [INFO ]  ----------------
+2021-04-06 16:39:26,940 [INFO ]  Item 326 of 20000
+2021-04-06 16:39:26,940 [INFO ]  what is the best torrent sites
+2021-04-06 16:39:26,940 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:30,866 [INFO ]  ----------------
+2021-04-06 16:39:30,866 [INFO ]  Item 327 of 20000
+2021-04-06 16:39:30,866 [INFO ]  why arnab goswami resign times now and start entrepreneurs .
+2021-04-06 16:39:30,866 [INFO ]  [0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:35,741 [INFO ]  ----------------
+2021-04-06 16:39:35,741 [INFO ]  Item 328 of 20000
+2021-04-06 16:39:35,741 [INFO ]  why doesn 't anyone reply to my questions on quora
+2021-04-06 16:39:35,742 [INFO ]  [0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:39:40,578 [INFO ]  ----------------
+2021-04-06 16:39:40,578 [INFO ]  Item 329 of 20000
+2021-04-06 16:39:40,578 [INFO ]  is there an online tool to convert python code into java code
+2021-04-06 16:39:40,578 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:39:46,330 [INFO ]  ----------------
+2021-04-06 16:39:46,330 [INFO ]  Item 330 of 20000
+2021-04-06 16:39:46,330 [INFO ]  what is the easiest way to stop masturbation
+2021-04-06 16:39:46,330 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:50,749 [INFO ]  ----------------
+2021-04-06 16:39:50,749 [INFO ]  Item 331 of 20000
+2021-04-06 16:39:50,749 [INFO ]  how do i get over my porn addiction
+2021-04-06 16:39:50,749 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:39:55,163 [INFO ]  ----------------
+2021-04-06 16:39:55,163 [INFO ]  Item 332 of 20000
+2021-04-06 16:39:55,163 [INFO ]  is our new currency note of rs . 2000 equipped with nano gps chips
+2021-04-06 16:39:55,163 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0]
+2021-04-06 16:39:59,649 [INFO ]  ----------------
+2021-04-06 16:39:59,650 [INFO ]  Item 333 of 20000
+2021-04-06 16:39:59,650 [INFO ]  what is the best website for making posters
+2021-04-06 16:39:59,650 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:04,609 [INFO ]  ----------------
+2021-04-06 16:40:04,609 [INFO ]  Item 334 of 20000
+2021-04-06 16:40:04,609 [INFO ]  what does it feel like to fall in love with your best friend
+2021-04-06 16:40:04,609 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0]
+2021-04-06 16:40:07,504 [INFO ]  ----------------
+2021-04-06 16:40:07,504 [INFO ]  Item 335 of 20000
+2021-04-06 16:40:07,504 [INFO ]  how can i get a complete list of all my gmail accounts
+2021-04-06 16:40:07,504 [INFO ]  [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0]
+2021-04-06 16:40:13,553 [INFO ]  ----------------
+2021-04-06 16:40:13,554 [INFO ]  Item 336 of 20000
+2021-04-06 16:40:13,554 [INFO ]  how come isis has never attacked israel
+2021-04-06 16:40:13,554 [INFO ]  [0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:17,369 [INFO ]  ----------------
+2021-04-06 16:40:17,370 [INFO ]  Item 337 of 20000
+2021-04-06 16:40:17,370 [INFO ]  where are cookies actually stored on the computer
+2021-04-06 16:40:17,370 [INFO ]  [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:22,385 [INFO ]  ----------------
+2021-04-06 16:40:22,386 [INFO ]  Item 338 of 20000
+2021-04-06 16:40:22,386 [INFO ]  has anyone on this forum tried to use a ouija board and was successful
+2021-04-06 16:40:22,386 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1]
+2021-04-06 16:40:26,477 [INFO ]  ----------------
+2021-04-06 16:40:26,478 [INFO ]  Item 339 of 20000
+2021-04-06 16:40:26,478 [INFO ]  what is the best way of language self learning
+2021-04-06 16:40:26,478 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:40:31,143 [INFO ]  ----------------
+2021-04-06 16:40:31,143 [INFO ]  Item 340 of 20000
+2021-04-06 16:40:31,143 [INFO ]  what would you do if you won a million dollar lottery
+2021-04-06 16:40:31,143 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0]
+2021-04-06 16:40:36,362 [INFO ]  ----------------
+2021-04-06 16:40:36,362 [INFO ]  Item 341 of 20000
+2021-04-06 16:40:36,362 [INFO ]  is it wrong to hate a certain race
+2021-04-06 16:40:36,362 [INFO ]  [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:40,886 [INFO ]  ----------------
+2021-04-06 16:40:40,886 [INFO ]  Item 342 of 20000
+2021-04-06 16:40:40,886 [INFO ]  which is the best cat coaching class in karnataka
+2021-04-06 16:40:40,886 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:40:46,338 [INFO ]  ----------------
+2021-04-06 16:40:46,338 [INFO ]  Item 343 of 20000
+2021-04-06 16:40:46,339 [INFO ]  what is the best binary options broker
+2021-04-06 16:40:46,339 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:51,348 [INFO ]  ----------------
+2021-04-06 16:40:51,348 [INFO ]  Item 344 of 20000
+2021-04-06 16:40:51,348 [INFO ]  what can be the possible effects of removing 500 and 1000 rupee currency notes
+2021-04-06 16:40:51,348 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1]
+2021-04-06 16:40:55,215 [INFO ]  ----------------
+2021-04-06 16:40:55,215 [INFO ]  Item 345 of 20000
+2021-04-06 16:40:55,215 [INFO ]  what do you think bermuda triangle is
+2021-04-06 16:40:55,215 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:40:59,706 [INFO ]  ----------------
+2021-04-06 16:40:59,706 [INFO ]  Item 346 of 20000
+2021-04-06 16:40:59,706 [INFO ]  does consciousness belong to a fifth dimension
+2021-04-06 16:40:59,707 [INFO ]  [0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:41:03,791 [INFO ]  ----------------
+2021-04-06 16:41:03,792 [INFO ]  Item 347 of 20000
+2021-04-06 16:41:03,792 [INFO ]  will donald trump crack down on the h1b visa program if he gets elected
+2021-04-06 16:41:03,792 [INFO ]  [0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1]
+2021-04-06 16:41:06,905 [INFO ]  ----------------
+2021-04-06 16:41:06,905 [INFO ]  Item 348 of 20000
+2021-04-06 16:41:06,906 [INFO ]  how can i get the funding for my startup without revealing my idea
+2021-04-06 16:41:06,906 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0]
+2021-04-06 16:41:10,157 [INFO ]  ----------------
+2021-04-06 16:41:10,158 [INFO ]  Item 349 of 20000
+2021-04-06 16:41:10,158 [INFO ]  what is the best question asked in your interview
+2021-04-06 16:41:10,158 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:41:15,471 [INFO ]  ----------------
+2021-04-06 16:41:15,471 [INFO ]  Item 350 of 20000
+2021-04-06 16:41:15,471 [INFO ]  how can i hack my spouse whatsapp account
+2021-04-06 16:41:15,472 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:41:20,017 [INFO ]  ----------------
+2021-04-06 16:41:20,017 [INFO ]  Item 351 of 20000
+2021-04-06 16:41:20,018 [INFO ]  is there any proven method to increase 13 year old girl 's height after
+2021-04-06 16:41:20,018 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0]
+2021-04-06 16:41:23,210 [INFO ]  ----------------
+2021-04-06 16:41:23,210 [INFO ]  Item 352 of 20000
+2021-04-06 16:41:23,210 [INFO ]  how can a negative person become a positive one
+2021-04-06 16:41:23,210 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:41:27,670 [INFO ]  ----------------
+2021-04-06 16:41:27,670 [INFO ]  Item 353 of 20000
+2021-04-06 16:41:27,670 [INFO ]  what is the quickest way to get meth out your system
+2021-04-06 16:41:27,670 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:41:33,070 [INFO ]  ----------------
+2021-04-06 16:41:33,070 [INFO ]  Item 354 of 20000
+2021-04-06 16:41:33,070 [INFO ]  how can i learn to hack seriously
+2021-04-06 16:41:33,070 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:41:36,742 [INFO ]  ----------------
+2021-04-06 16:41:36,742 [INFO ]  Item 355 of 20000
+2021-04-06 16:41:36,742 [INFO ]  what are the best colleges for mass communication in india
+2021-04-06 16:41:36,742 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:41:42,066 [INFO ]  ----------------
+2021-04-06 16:41:42,066 [INFO ]  Item 356 of 20000
+2021-04-06 16:41:42,066 [INFO ]  how do i get traffic on website
+2021-04-06 16:41:42,066 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:41:46,417 [INFO ]  ----------------
+2021-04-06 16:41:46,417 [INFO ]  Item 357 of 20000
+2021-04-06 16:41:46,417 [INFO ]  what drinks can i get to pass drug test for meth
+2021-04-06 16:41:46,418 [INFO ]  [0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:41:52,524 [INFO ]  ----------------
+2021-04-06 16:41:52,524 [INFO ]  Item 358 of 20000
+2021-04-06 16:41:52,525 [INFO ]  what are some mind blowing camping adventure tools that exist that most people don
+2021-04-06 16:41:52,525 [INFO ]  [0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0]
+2021-04-06 16:41:56,585 [INFO ]  ----------------
+2021-04-06 16:41:56,585 [INFO ]  Item 359 of 20000
+2021-04-06 16:41:56,585 [INFO ]  is this move of banning 500 & 1000 rupee notes right
+2021-04-06 16:41:56,585 [INFO ]  [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:02,215 [INFO ]  ----------------
+2021-04-06 16:42:02,216 [INFO ]  Item 360 of 20000
+2021-04-06 16:42:02,216 [INFO ]  what do all indians commonly doing wrong
+2021-04-06 16:42:02,216 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:06,689 [INFO ]  ----------------
+2021-04-06 16:42:06,690 [INFO ]  Item 361 of 20000
+2021-04-06 16:42:06,690 [INFO ]  can a blocked number see your missed calls
+2021-04-06 16:42:06,690 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:11,899 [INFO ]  ----------------
+2021-04-06 16:42:11,899 [INFO ]  Item 362 of 20000
+2021-04-06 16:42:11,899 [INFO ]  what are some great websites which many people don 't know about
+2021-04-06 16:42:11,899 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:42:16,392 [INFO ]  ----------------
+2021-04-06 16:42:16,392 [INFO ]  Item 363 of 20000
+2021-04-06 16:42:16,393 [INFO ]  what do intelligent people do with their phones
+2021-04-06 16:42:16,393 [INFO ]  [0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:21,862 [INFO ]  ----------------
+2021-04-06 16:42:21,862 [INFO ]  Item 364 of 20000
+2021-04-06 16:42:21,862 [INFO ]  how can one overcome porn addiction
+2021-04-06 16:42:21,862 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:25,268 [INFO ]  ----------------
+2021-04-06 16:42:25,268 [INFO ]  Item 365 of 20000
+2021-04-06 16:42:25,268 [INFO ]  where is the oddest place you ' ve had sex
+2021-04-06 16:42:25,268 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:42:30,399 [INFO ]  ----------------
+2021-04-06 16:42:30,400 [INFO ]  Item 366 of 20000
+2021-04-06 16:42:30,400 [INFO ]  what are the processes and assumptions used in carbon dating
+2021-04-06 16:42:30,400 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:42:36,118 [INFO ]  ----------------
+2021-04-06 16:42:36,118 [INFO ]  Item 367 of 20000
+2021-04-06 16:42:36,118 [INFO ]  how can i catch my husband cheating
+2021-04-06 16:42:36,118 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:40,369 [INFO ]  ----------------
+2021-04-06 16:42:40,369 [INFO ]  Item 368 of 20000
+2021-04-06 16:42:40,370 [INFO ]  how do become a good legal writer
+2021-04-06 16:42:40,370 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:42:44,684 [INFO ]  ----------------
+2021-04-06 16:42:44,684 [INFO ]  Item 369 of 20000
+2021-04-06 16:42:44,684 [INFO ]  can you get high if you walk into a room that someone is vaping
+2021-04-06 16:42:44,684 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1]
+2021-04-06 16:42:48,530 [INFO ]  ----------------
+2021-04-06 16:42:48,530 [INFO ]  Item 370 of 20000
+2021-04-06 16:42:48,530 [INFO ]  how can i stop being okay with being mediocre
+2021-04-06 16:42:48,530 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:42:53,385 [INFO ]  ----------------
+2021-04-06 16:42:53,386 [INFO ]  Item 371 of 20000
+2021-04-06 16:42:53,386 [INFO ]  what is the most asked question in an interview
+2021-04-06 16:42:53,386 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:42:58,758 [INFO ]  ----------------
+2021-04-06 16:42:58,758 [INFO ]  Item 372 of 20000
+2021-04-06 16:42:58,758 [INFO ]  how could donald trump get mexico to pay for a border wall
+2021-04-06 16:42:58,758 [INFO ]  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0]
+2021-04-06 16:43:04,801 [INFO ]  ----------------
+2021-04-06 16:43:04,801 [INFO ]  Item 373 of 20000
+2021-04-06 16:43:04,802 [INFO ]  is donald trump successful if so , why
+2021-04-06 16:43:04,802 [INFO ]  [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:09,235 [INFO ]  ----------------
+2021-04-06 16:43:09,235 [INFO ]  Item 374 of 20000
+2021-04-06 16:43:09,235 [INFO ]  what is the property of a parallelogram
+2021-04-06 16:43:09,235 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:13,814 [INFO ]  ----------------
+2021-04-06 16:43:13,814 [INFO ]  Item 375 of 20000
+2021-04-06 16:43:13,815 [INFO ]  is donald trump capable of running a country
+2021-04-06 16:43:13,815 [INFO ]  [0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:18,428 [INFO ]  ----------------
+2021-04-06 16:43:18,428 [INFO ]  Item 376 of 20000
+2021-04-06 16:43:18,428 [INFO ]  who 's better : bruce lee or muhammad ali
+2021-04-06 16:43:18,428 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:43:23,271 [INFO ]  ----------------
+2021-04-06 16:43:23,271 [INFO ]  Item 377 of 20000
+2021-04-06 16:43:23,272 [INFO ]  how will the gst bill affect common men and the country what are its
+2021-04-06 16:43:23,272 [INFO ]  [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:43:26,913 [INFO ]  ----------------
+2021-04-06 16:43:26,913 [INFO ]  Item 378 of 20000
+2021-04-06 16:43:26,914 [INFO ]  what is the exam pattern for cat 2016
+2021-04-06 16:43:26,914 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:31,602 [INFO ]  ----------------
+2021-04-06 16:43:31,602 [INFO ]  Item 379 of 20000
+2021-04-06 16:43:31,602 [INFO ]  why do people ask questions on quora that can easily be answered by google
+2021-04-06 16:43:31,602 [INFO ]  [0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1]
+2021-04-06 16:43:35,299 [INFO ]  ----------------
+2021-04-06 16:43:35,299 [INFO ]  Item 380 of 20000
+2021-04-06 16:43:35,299 [INFO ]  how can i realistically make money online
+2021-04-06 16:43:35,299 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:39,700 [INFO ]  ----------------
+2021-04-06 16:43:39,700 [INFO ]  Item 381 of 20000
+2021-04-06 16:43:39,700 [INFO ]  what is the best web scraping tutorial with python
+2021-04-06 16:43:39,701 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:43:44,666 [INFO ]  ----------------
+2021-04-06 16:43:44,666 [INFO ]  Item 382 of 20000
+2021-04-06 16:43:44,666 [INFO ]  what are the best hotels in rajasthan
+2021-04-06 16:43:44,666 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:49,140 [INFO ]  ----------------
+2021-04-06 16:43:49,140 [INFO ]  Item 383 of 20000
+2021-04-06 16:43:49,140 [INFO ]  how can you troubleshoot an ipod classic that constantly freezes
+2021-04-06 16:43:49,140 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:43:53,759 [INFO ]  ----------------
+2021-04-06 16:43:53,759 [INFO ]  Item 384 of 20000
+2021-04-06 16:43:53,759 [INFO ]  when will the present reservation policy stop in india
+2021-04-06 16:43:53,759 [INFO ]  [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:43:58,217 [INFO ]  ----------------
+2021-04-06 16:43:58,217 [INFO ]  Item 385 of 20000
+2021-04-06 16:43:58,217 [INFO ]  how can i study more efficiently
+2021-04-06 16:43:58,217 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:44:01,174 [INFO ]  ----------------
+2021-04-06 16:44:01,174 [INFO ]  Item 386 of 20000
+2021-04-06 16:44:01,175 [INFO ]  what is the best online resource to learn python
+2021-04-06 16:44:01,175 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:44:06,517 [INFO ]  ----------------
+2021-04-06 16:44:06,517 [INFO ]  Item 387 of 20000
+2021-04-06 16:44:06,517 [INFO ]  how can i start jio 4g sim in 3g mobiles
+2021-04-06 16:44:06,517 [INFO ]  [0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:44:11,823 [INFO ]  ----------------
+2021-04-06 16:44:11,824 [INFO ]  Item 388 of 20000
+2021-04-06 16:44:11,824 [INFO ]  why is a place at higher altitude colder than one at sea level
+2021-04-06 16:44:11,824 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0]
+2021-04-06 16:44:15,726 [INFO ]  ----------------
+2021-04-06 16:44:15,732 [INFO ]  Item 389 of 20000
+2021-04-06 16:44:15,732 [INFO ]  how do i stop a pointer / boxer mix puppy from chewing my shoes
+2021-04-06 16:44:15,732 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0]
+2021-04-06 16:44:19,166 [INFO ]  ----------------
+2021-04-06 16:44:19,166 [INFO ]  Item 390 of 20000
+2021-04-06 16:44:19,166 [INFO ]  what can i do to increase my iq
+2021-04-06 16:44:19,166 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:44:23,570 [INFO ]  ----------------
+2021-04-06 16:44:23,570 [INFO ]  Item 391 of 20000
+2021-04-06 16:44:23,571 [INFO ]  which is the best headphone below rs . 5000
+2021-04-06 16:44:23,571 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:44:28,578 [INFO ]  ----------------
+2021-04-06 16:44:28,578 [INFO ]  Item 392 of 20000
+2021-04-06 16:44:28,578 [INFO ]  why are so many people on quora obsessed with iq
+2021-04-06 16:44:28,578 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:44:33,987 [INFO ]  ----------------
+2021-04-06 16:44:33,987 [INFO ]  Item 393 of 20000
+2021-04-06 16:44:33,987 [INFO ]  how much money do i need to travel from philippines to israel for 2
+2021-04-06 16:44:33,987 [INFO ]  [0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1]
+2021-04-06 16:44:37,307 [INFO ]  ----------------
+2021-04-06 16:44:37,308 [INFO ]  Item 394 of 20000
+2021-04-06 16:44:37,308 [INFO ]  who is the most corrupt politician in india and why
+2021-04-06 16:44:37,308 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:44:42,825 [INFO ]  ----------------
+2021-04-06 16:44:42,825 [INFO ]  Item 395 of 20000
+2021-04-06 16:44:42,825 [INFO ]  can you get pregnant the day before your period starts
+2021-04-06 16:44:42,825 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:44:48,037 [INFO ]  ----------------
+2021-04-06 16:44:48,037 [INFO ]  Item 396 of 20000
+2021-04-06 16:44:48,038 [INFO ]  how do i review a research paper
+2021-04-06 16:44:48,038 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:44:52,074 [INFO ]  ----------------
+2021-04-06 16:44:52,074 [INFO ]  Item 397 of 20000
+2021-04-06 16:44:52,075 [INFO ]  how can i get a list of all my gmail accounts or recover them
+2021-04-06 16:44:52,075 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0]
+2021-04-06 16:44:55,351 [INFO ]  ----------------
+2021-04-06 16:44:55,351 [INFO ]  Item 398 of 20000
+2021-04-06 16:44:55,351 [INFO ]  what 's the most greatest form of martial arts
+2021-04-06 16:44:55,351 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:44:59,680 [INFO ]  ----------------
+2021-04-06 16:44:59,680 [INFO ]  Item 399 of 20000
+2021-04-06 16:44:59,680 [INFO ]  what is the objective and method of the role technology in third party logistics
+2021-04-06 16:44:59,680 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1]
+2021-04-06 16:45:03,259 [INFO ]  ----------------
+2021-04-06 16:45:03,259 [INFO ]  Item 400 of 20000
+2021-04-06 16:45:03,259 [INFO ]  why don 't jehovah 's witnesses celebrate birthdays
+2021-04-06 16:45:03,259 [INFO ]  [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:45:08,186 [INFO ]  ----------------
+2021-04-06 16:45:08,186 [INFO ]  Item 401 of 20000
+2021-04-06 16:45:08,186 [INFO ]  how can long distance relationships be successful
+2021-04-06 16:45:08,186 [INFO ]  [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:45:12,133 [INFO ]  ----------------
+2021-04-06 16:45:12,133 [INFO ]  Item 402 of 20000
+2021-04-06 16:45:12,133 [INFO ]  what would you do if you were having 24 hours to live
+2021-04-06 16:45:12,133 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0]
+2021-04-06 16:45:17,660 [INFO ]  ----------------
+2021-04-06 16:45:17,660 [INFO ]  Item 403 of 20000
+2021-04-06 16:45:17,660 [INFO ]  what should we answer when a hr questions why should we hire you
+2021-04-06 16:45:17,660 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0]
+2021-04-06 16:45:21,459 [INFO ]  ----------------
+2021-04-06 16:45:21,459 [INFO ]  Item 404 of 20000
+2021-04-06 16:45:21,459 [INFO ]  which is the best place to visit in cambodia
+2021-04-06 16:45:21,459 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:45:26,438 [INFO ]  ----------------
+2021-04-06 16:45:26,438 [INFO ]  Item 405 of 20000
+2021-04-06 16:45:26,438 [INFO ]  how do i get UNK smoke out of my nice coat
+2021-04-06 16:45:26,439 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:45:32,296 [INFO ]  ----------------
+2021-04-06 16:45:32,296 [INFO ]  Item 406 of 20000
+2021-04-06 16:45:32,296 [INFO ]  what are different types of seismic waves how do they differ
+2021-04-06 16:45:32,296 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:45:36,990 [INFO ]  ----------------
+2021-04-06 16:45:36,990 [INFO ]  Item 407 of 20000
+2021-04-06 16:45:36,990 [INFO ]  what should i think when a girl says that she respects my feelings and
+2021-04-06 16:45:36,990 [INFO ]  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]
+2021-04-06 16:45:40,016 [INFO ]  ----------------
+2021-04-06 16:45:40,016 [INFO ]  Item 408 of 20000
+2021-04-06 16:45:40,016 [INFO ]  what are the best university in us
+2021-04-06 16:45:40,016 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:45:43,909 [INFO ]  ----------------
+2021-04-06 16:45:43,909 [INFO ]  Item 409 of 20000
+2021-04-06 16:45:43,909 [INFO ]  how do you clean out a catalytic converter
+2021-04-06 16:45:43,909 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:45:48,278 [INFO ]  ----------------
+2021-04-06 16:45:48,278 [INFO ]  Item 410 of 20000
+2021-04-06 16:45:48,278 [INFO ]  how do you add chocolate chips to cake mix
+2021-04-06 16:45:48,278 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:45:53,396 [INFO ]  ----------------
+2021-04-06 16:45:53,396 [INFO ]  Item 411 of 20000
+2021-04-06 16:45:53,396 [INFO ]  how can you tell if someone is a psychopath
+2021-04-06 16:45:53,396 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:45:57,595 [INFO ]  ----------------
+2021-04-06 16:45:57,595 [INFO ]  Item 412 of 20000
+2021-04-06 16:45:57,595 [INFO ]  what do nasa employees think of spacex
+2021-04-06 16:45:57,596 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:01,265 [INFO ]  ----------------
+2021-04-06 16:46:01,271 [INFO ]  Item 413 of 20000
+2021-04-06 16:46:01,271 [INFO ]  how can i become good in studies .
+2021-04-06 16:46:01,271 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:05,474 [INFO ]  ----------------
+2021-04-06 16:46:05,474 [INFO ]  Item 414 of 20000
+2021-04-06 16:46:05,474 [INFO ]  why do some people abuse animals why would anyone do that
+2021-04-06 16:46:05,474 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:08,463 [INFO ]  ----------------
+2021-04-06 16:46:08,463 [INFO ]  Item 415 of 20000
+2021-04-06 16:46:08,464 [INFO ]  will hillary clinton cause wwiii by going to war with syria
+2021-04-06 16:46:08,464 [INFO ]  [0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:46:13,749 [INFO ]  ----------------
+2021-04-06 16:46:13,750 [INFO ]  Item 416 of 20000
+2021-04-06 16:46:13,750 [INFO ]  what is the difference between variance and standard deviation ; i would appreciate if
+2021-04-06 16:46:13,750 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:46:16,772 [INFO ]  ----------------
+2021-04-06 16:46:16,772 [INFO ]  Item 417 of 20000
+2021-04-06 16:46:16,772 [INFO ]  what are come cool facts about ancient pyramids
+2021-04-06 16:46:16,772 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:21,224 [INFO ]  ----------------
+2021-04-06 16:46:21,225 [INFO ]  Item 418 of 20000
+2021-04-06 16:46:21,225 [INFO ]  what is the most remote place on earth
+2021-04-06 16:46:21,225 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:26,179 [INFO ]  ----------------
+2021-04-06 16:46:26,179 [INFO ]  Item 419 of 20000
+2021-04-06 16:46:26,179 [INFO ]  can i retrieve deleted messages on instagram
+2021-04-06 16:46:26,179 [INFO ]  [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:30,601 [INFO ]  ----------------
+2021-04-06 16:46:30,601 [INFO ]  Item 420 of 20000
+2021-04-06 16:46:30,601 [INFO ]  have you ever met a celebrity in person before
+2021-04-06 16:46:30,601 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:34,624 [INFO ]  ----------------
+2021-04-06 16:46:34,624 [INFO ]  Item 421 of 20000
+2021-04-06 16:46:34,625 [INFO ]  how can i lose fat without doing any aerobic physical activity
+2021-04-06 16:46:34,625 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0]
+2021-04-06 16:46:40,063 [INFO ]  ----------------
+2021-04-06 16:46:40,063 [INFO ]  Item 422 of 20000
+2021-04-06 16:46:40,063 [INFO ]  how do i change my email address
+2021-04-06 16:46:40,063 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:43,884 [INFO ]  ----------------
+2021-04-06 16:46:43,889 [INFO ]  Item 423 of 20000
+2021-04-06 16:46:43,889 [INFO ]  how can you train a UNK / chihuahua mix
+2021-04-06 16:46:43,890 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:48,765 [INFO ]  ----------------
+2021-04-06 16:46:48,765 [INFO ]  Item 424 of 20000
+2021-04-06 16:46:48,766 [INFO ]  what is the best gift i can buy for my girl to make her
+2021-04-06 16:46:48,766 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0]
+2021-04-06 16:46:52,047 [INFO ]  ----------------
+2021-04-06 16:46:52,048 [INFO ]  Item 425 of 20000
+2021-04-06 16:46:52,048 [INFO ]  are the people more worried about doing things right , or doing the right
+2021-04-06 16:46:52,048 [INFO ]  [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:46:55,505 [INFO ]  ----------------
+2021-04-06 16:46:55,505 [INFO ]  Item 426 of 20000
+2021-04-06 16:46:55,505 [INFO ]  how do i speak english fluently in half a year
+2021-04-06 16:46:55,505 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:47:00,875 [INFO ]  ----------------
+2021-04-06 16:47:00,875 [INFO ]  Item 427 of 20000
+2021-04-06 16:47:00,875 [INFO ]  how do i find mentors in nyc for saas startup i want to start
+2021-04-06 16:47:00,875 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1]
+2021-04-06 16:47:04,110 [INFO ]  ----------------
+2021-04-06 16:47:04,110 [INFO ]  Item 428 of 20000
+2021-04-06 16:47:04,110 [INFO ]  what is the best institute for hotel management in india
+2021-04-06 16:47:04,110 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:47:09,128 [INFO ]  ----------------
+2021-04-06 16:47:09,128 [INFO ]  Item 429 of 20000
+2021-04-06 16:47:09,128 [INFO ]  what are the effects of masturbation
+2021-04-06 16:47:09,128 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:12,998 [INFO ]  ----------------
+2021-04-06 16:47:12,999 [INFO ]  Item 430 of 20000
+2021-04-06 16:47:12,999 [INFO ]  what are the similarities between socialism and capitalism what are their differences
+2021-04-06 16:47:12,999 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0]
+2021-04-06 16:47:17,640 [INFO ]  ----------------
+2021-04-06 16:47:17,640 [INFO ]  Item 431 of 20000
+2021-04-06 16:47:17,640 [INFO ]  would it be possible to break the sound barrier underwater would it be the
+2021-04-06 16:47:17,640 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:47:21,069 [INFO ]  ----------------
+2021-04-06 16:47:21,069 [INFO ]  Item 432 of 20000
+2021-04-06 16:47:21,069 [INFO ]  what is the first thing you put in your mouth in the morning
+2021-04-06 16:47:21,069 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0]
+2021-04-06 16:47:24,565 [INFO ]  ----------------
+2021-04-06 16:47:24,565 [INFO ]  Item 433 of 20000
+2021-04-06 16:47:24,565 [INFO ]  what is basic difference between biotechnology and biochemistry
+2021-04-06 16:47:24,565 [INFO ]  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:29,530 [INFO ]  ----------------
+2021-04-06 16:47:29,535 [INFO ]  Item 434 of 20000
+2021-04-06 16:47:29,536 [INFO ]  which phone is best to buy under 15k
+2021-04-06 16:47:29,536 [INFO ]  [0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:34,256 [INFO ]  ----------------
+2021-04-06 16:47:34,256 [INFO ]  Item 435 of 20000
+2021-04-06 16:47:34,256 [INFO ]  what are the best ways to win salary negotiations
+2021-04-06 16:47:34,256 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:47:38,787 [INFO ]  ----------------
+2021-04-06 16:47:38,787 [INFO ]  Item 436 of 20000
+2021-04-06 16:47:38,788 [INFO ]  is the book the god of small things by arundhati roy overrated
+2021-04-06 16:47:38,788 [INFO ]  [0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:47:43,144 [INFO ]  ----------------
+2021-04-06 16:47:43,144 [INFO ]  Item 437 of 20000
+2021-04-06 16:47:43,144 [INFO ]  can i transfer money from a credit card to a prepaid card
+2021-04-06 16:47:43,144 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0]
+2021-04-06 16:47:47,608 [INFO ]  ----------------
+2021-04-06 16:47:47,608 [INFO ]  Item 438 of 20000
+2021-04-06 16:47:47,608 [INFO ]  what are the best drops songs
+2021-04-06 16:47:47,608 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:51,661 [INFO ]  ----------------
+2021-04-06 16:47:51,662 [INFO ]  Item 439 of 20000
+2021-04-06 16:47:51,662 [INFO ]  what is the best laptop under 30000 inr
+2021-04-06 16:47:51,662 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:56,095 [INFO ]  ----------------
+2021-04-06 16:47:56,096 [INFO ]  Item 440 of 20000
+2021-04-06 16:47:56,096 [INFO ]  how do i detox from meth quickly
+2021-04-06 16:47:56,096 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:47:59,983 [INFO ]  ----------------
+2021-04-06 16:47:59,984 [INFO ]  Item 441 of 20000
+2021-04-06 16:47:59,984 [INFO ]  how should i make money online for free
+2021-04-06 16:47:59,984 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:03,977 [INFO ]  ----------------
+2021-04-06 16:48:03,977 [INFO ]  Item 442 of 20000
+2021-04-06 16:48:03,977 [INFO ]  how does one avoid existential depression
+2021-04-06 16:48:03,977 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:07,576 [INFO ]  ----------------
+2021-04-06 16:48:07,576 [INFO ]  Item 443 of 20000
+2021-04-06 16:48:07,576 [INFO ]  what is the cheapest 3g service provider in bangalore
+2021-04-06 16:48:07,576 [INFO ]  [0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:12,535 [INFO ]  ----------------
+2021-04-06 16:48:12,535 [INFO ]  Item 444 of 20000
+2021-04-06 16:48:12,535 [INFO ]  how can i improve on my art
+2021-04-06 16:48:12,535 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:15,726 [INFO ]  ----------------
+2021-04-06 16:48:15,727 [INFO ]  Item 445 of 20000
+2021-04-06 16:48:15,727 [INFO ]  is it valuable to do mba after completing chartered accountancy
+2021-04-06 16:48:15,727 [INFO ]  [0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:48:21,329 [INFO ]  ----------------
+2021-04-06 16:48:21,330 [INFO ]  Item 446 of 20000
+2021-04-06 16:48:21,330 [INFO ]  why does hillary clinton 's health matter
+2021-04-06 16:48:21,330 [INFO ]  [0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:25,679 [INFO ]  ----------------
+2021-04-06 16:48:25,679 [INFO ]  Item 447 of 20000
+2021-04-06 16:48:25,680 [INFO ]  how do you cook frozen burgers in a oven
+2021-04-06 16:48:25,680 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:48:30,571 [INFO ]  ----------------
+2021-04-06 16:48:30,571 [INFO ]  Item 448 of 20000
+2021-04-06 16:48:30,571 [INFO ]  i just want to die . how can i make it look like an
+2021-04-06 16:48:30,571 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:48:34,844 [INFO ]  ----------------
+2021-04-06 16:48:34,845 [INFO ]  Item 449 of 20000
+2021-04-06 16:48:34,845 [INFO ]  what programming language i should learn first
+2021-04-06 16:48:34,845 [INFO ]  [0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:39,005 [INFO ]  ----------------
+2021-04-06 16:48:39,005 [INFO ]  Item 450 of 20000
+2021-04-06 16:48:39,005 [INFO ]  what is the craziest place where you have had sex
+2021-04-06 16:48:39,005 [INFO ]  [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:48:44,387 [INFO ]  ----------------
+2021-04-06 16:48:44,387 [INFO ]  Item 451 of 20000
+2021-04-06 16:48:44,387 [INFO ]  could hillary clinton actually go to jail
+2021-04-06 16:48:44,387 [INFO ]  [0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:48,026 [INFO ]  ----------------
+2021-04-06 16:48:48,026 [INFO ]  Item 452 of 20000
+2021-04-06 16:48:48,027 [INFO ]  what are your views on abortion
+2021-04-06 16:48:48,027 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:48:51,800 [INFO ]  ----------------
+2021-04-06 16:48:51,800 [INFO ]  Item 453 of 20000
+2021-04-06 16:48:51,800 [INFO ]  what all mathematics do we need for competitive programming
+2021-04-06 16:48:51,800 [INFO ]  [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:48:57,501 [INFO ]  ----------------
+2021-04-06 16:48:57,501 [INFO ]  Item 454 of 20000
+2021-04-06 16:48:57,501 [INFO ]  what is your favourite english song right now
+2021-04-06 16:48:57,501 [INFO ]  [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:02,410 [INFO ]  ----------------
+2021-04-06 16:49:02,411 [INFO ]  Item 455 of 20000
+2021-04-06 16:49:02,411 [INFO ]  what is the best tourist destination in nigeria and why
+2021-04-06 16:49:02,411 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:07,569 [INFO ]  ----------------
+2021-04-06 16:49:07,570 [INFO ]  Item 456 of 20000
+2021-04-06 16:49:07,570 [INFO ]  how long should menstrual cramps last before i should worry
+2021-04-06 16:49:07,570 [INFO ]  [0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:49:12,391 [INFO ]  ----------------
+2021-04-06 16:49:12,391 [INFO ]  Item 457 of 20000
+2021-04-06 16:49:12,391 [INFO ]  which are the best UNK rates beach facing resorts to stay in with your
+2021-04-06 16:49:12,392 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:49:15,475 [INFO ]  ----------------
+2021-04-06 16:49:15,475 [INFO ]  Item 458 of 20000
+2021-04-06 16:49:15,475 [INFO ]  where can i get wonderful floor tiles company in sydney
+2021-04-06 16:49:15,475 [INFO ]  [0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:49:20,993 [INFO ]  ----------------
+2021-04-06 16:49:20,993 [INFO ]  Item 459 of 20000
+2021-04-06 16:49:20,993 [INFO ]  how do you earn money on quora
+2021-04-06 16:49:20,993 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:25,098 [INFO ]  ----------------
+2021-04-06 16:49:25,098 [INFO ]  Item 460 of 20000
+2021-04-06 16:49:25,098 [INFO ]  at what age did you first realize you were gay / bisexual and how
+2021-04-06 16:49:25,098 [INFO ]  [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0]
+2021-04-06 16:49:28,899 [INFO ]  ----------------
+2021-04-06 16:49:28,899 [INFO ]  Item 461 of 20000
+2021-04-06 16:49:28,900 [INFO ]  how do i recover my gmail account when it does not open after password
+2021-04-06 16:49:28,900 [INFO ]  [0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1]
+2021-04-06 16:49:32,591 [INFO ]  ----------------
+2021-04-06 16:49:32,591 [INFO ]  Item 462 of 20000
+2021-04-06 16:49:32,591 [INFO ]  how can i help this world
+2021-04-06 16:49:32,591 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:37,024 [INFO ]  ----------------
+2021-04-06 16:49:37,024 [INFO ]  Item 463 of 20000
+2021-04-06 16:49:37,024 [INFO ]  how do i not get high if someone is vaping weed in the same
+2021-04-06 16:49:37,025 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:49:41,784 [INFO ]  ----------------
+2021-04-06 16:49:41,784 [INFO ]  Item 464 of 20000
+2021-04-06 16:49:41,784 [INFO ]  what should a girl do when her real brother raped her
+2021-04-06 16:49:41,784 [INFO ]  [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]
+2021-04-06 16:49:46,875 [INFO ]  ----------------
+2021-04-06 16:49:46,880 [INFO ]  Item 465 of 20000
+2021-04-06 16:49:46,881 [INFO ]  how do i get started on machine learning
+2021-04-06 16:49:46,881 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:51,187 [INFO ]  ----------------
+2021-04-06 16:49:51,187 [INFO ]  Item 466 of 20000
+2021-04-06 16:49:51,187 [INFO ]  what are the most popular UNK and why
+2021-04-06 16:49:51,187 [INFO ]  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:56,025 [INFO ]  ----------------
+2021-04-06 16:49:56,025 [INFO ]  Item 467 of 20000
+2021-04-06 16:49:56,025 [INFO ]  are there more questions than answers
+2021-04-06 16:49:56,025 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:49:59,793 [INFO ]  ----------------
+2021-04-06 16:49:59,793 [INFO ]  Item 468 of 20000
+2021-04-06 16:49:59,793 [INFO ]  how is pok mon go played
+2021-04-06 16:49:59,793 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:04,173 [INFO ]  ----------------
+2021-04-06 16:50:04,173 [INFO ]  Item 469 of 20000
+2021-04-06 16:50:04,173 [INFO ]  how can i prepare for ftii
+2021-04-06 16:50:04,173 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:07,751 [INFO ]  ----------------
+2021-04-06 16:50:07,756 [INFO ]  Item 470 of 20000
+2021-04-06 16:50:07,756 [INFO ]  how can i delete my own question from quora
+2021-04-06 16:50:07,756 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:50:12,497 [INFO ]  ----------------
+2021-04-06 16:50:12,497 [INFO ]  Item 471 of 20000
+2021-04-06 16:50:12,497 [INFO ]  what is the best way to get traffic on your website
+2021-04-06 16:50:12,497 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
+2021-04-06 16:50:17,819 [INFO ]  ----------------
+2021-04-06 16:50:17,820 [INFO ]  Item 472 of 20000
+2021-04-06 16:50:17,820 [INFO ]  how is potential energy converted to kinetic energy
+2021-04-06 16:50:17,820 [INFO ]  [0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:21,907 [INFO ]  ----------------
+2021-04-06 16:50:21,907 [INFO ]  Item 473 of 20000
+2021-04-06 16:50:21,907 [INFO ]  relation between phase & line voltage
+2021-04-06 16:50:21,907 [INFO ]  [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:25,729 [INFO ]  ----------------
+2021-04-06 16:50:25,729 [INFO ]  Item 474 of 20000
+2021-04-06 16:50:25,729 [INFO ]  does the word ' slave ' come from the name of the slavic people
+2021-04-06 16:50:25,729 [INFO ]  [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+2021-04-06 16:50:29,566 [INFO ]  ----------------
+2021-04-06 16:50:29,567 [INFO ]  Item 475 of 20000
+2021-04-06 16:50:29,567 [INFO ]  how old is hinduism in its current form
+2021-04-06 16:50:29,567 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:33,944 [INFO ]  ----------------
+2021-04-06 16:50:33,944 [INFO ]  Item 476 of 20000
+2021-04-06 16:50:33,944 [INFO ]  what should 6 week old pit bull puppies be eating
+2021-04-06 16:50:33,944 [INFO ]  [0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:39,070 [INFO ]  ----------------
+2021-04-06 16:50:39,070 [INFO ]  Item 477 of 20000
+2021-04-06 16:50:39,071 [INFO ]  what advice would you give to your 30 year old self , if you
+2021-04-06 16:50:39,071 [INFO ]  [0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:50:42,312 [INFO ]  ----------------
+2021-04-06 16:50:42,312 [INFO ]  Item 478 of 20000
+2021-04-06 16:50:42,312 [INFO ]  how is the process of hydrolysis described
+2021-04-06 16:50:42,312 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:46,452 [INFO ]  ----------------
+2021-04-06 16:50:46,452 [INFO ]  Item 479 of 20000
+2021-04-06 16:50:46,452 [INFO ]  which is the best book for learning language c + +
+2021-04-06 16:50:46,452 [INFO ]  [0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+2021-04-06 16:50:52,010 [INFO ]  ----------------
+2021-04-06 16:50:52,010 [INFO ]  Item 480 of 20000
+2021-04-06 16:50:52,010 [INFO ]  how does concentric contractions differ from eccentric contractions
+2021-04-06 16:50:52,010 [INFO ]  [0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:50:56,303 [INFO ]  ----------------
+2021-04-06 16:50:56,303 [INFO ]  Item 481 of 20000
+2021-04-06 16:50:56,303 [INFO ]  what does it take to be a top writer on quora
+2021-04-06 16:50:56,303 [INFO ]  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:51:01,381 [INFO ]  ----------------
+2021-04-06 16:51:01,381 [INFO ]  Item 482 of 20000
+2021-04-06 16:51:01,381 [INFO ]  what are some good examples of industrial engineering thesis topics
+2021-04-06 16:51:01,381 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+2021-04-06 16:51:07,464 [INFO ]  ----------------
+2021-04-06 16:51:07,464 [INFO ]  Item 483 of 20000
+2021-04-06 16:51:07,464 [INFO ]  which songs make you feel happy when listening to them
+2021-04-06 16:51:07,464 [INFO ]  [0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:12,356 [INFO ]  ----------------
+2021-04-06 16:51:12,356 [INFO ]  Item 484 of 20000
+2021-04-06 16:51:12,356 [INFO ]  is there any possibility that the aliens are also living on earth like humans
+2021-04-06 16:51:12,356 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1]
+2021-04-06 16:51:15,859 [INFO ]  ----------------
+2021-04-06 16:51:15,865 [INFO ]  Item 485 of 20000
+2021-04-06 16:51:15,865 [INFO ]  how can i earn money using youtube
+2021-04-06 16:51:15,865 [INFO ]  [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:20,098 [INFO ]  ----------------
+2021-04-06 16:51:20,098 [INFO ]  Item 486 of 20000
+2021-04-06 16:51:20,098 [INFO ]  what 's balaji vishwanathan 's take on banning 500 and 1000 rs . currency
+2021-04-06 16:51:20,098 [INFO ]  [0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1]
+2021-04-06 16:51:23,676 [INFO ]  ----------------
+2021-04-06 16:51:23,676 [INFO ]  Item 487 of 20000
+2021-04-06 16:51:23,676 [INFO ]  where can i get funding for my idea
+2021-04-06 16:51:23,676 [INFO ]  [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:27,709 [INFO ]  ----------------
+2021-04-06 16:51:27,710 [INFO ]  Item 488 of 20000
+2021-04-06 16:51:27,710 [INFO ]  how are jammu and kashmir sub divided
+2021-04-06 16:51:27,710 [INFO ]  [0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:31,655 [INFO ]  ----------------
+2021-04-06 16:51:31,655 [INFO ]  Item 489 of 20000
+2021-04-06 16:51:31,655 [INFO ]  how do i remove all porn from earth
+2021-04-06 16:51:31,655 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:36,351 [INFO ]  ----------------
+2021-04-06 16:51:36,351 [INFO ]  Item 490 of 20000
+2021-04-06 16:51:36,352 [INFO ]  how can i help my dog get rid of hiccups
+2021-04-06 16:51:36,352 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:51:41,637 [INFO ]  ----------------
+2021-04-06 16:51:41,637 [INFO ]  Item 491 of 20000
+2021-04-06 16:51:41,637 [INFO ]  when did world war one start
+2021-04-06 16:51:41,637 [INFO ]  [0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:51:45,265 [INFO ]  ----------------
+2021-04-06 16:51:45,265 [INFO ]  Item 492 of 20000
+2021-04-06 16:51:45,265 [INFO ]  what do people from other countries think of america and americans
+2021-04-06 16:51:45,265 [INFO ]  [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0]
+2021-04-06 16:51:50,612 [INFO ]  ----------------
+2021-04-06 16:51:50,612 [INFO ]  Item 493 of 20000
+2021-04-06 16:51:50,612 [INFO ]  what is the difference between a primary , secondary and tertiary industry
+2021-04-06 16:51:50,612 [INFO ]  [0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0]
+2021-04-06 16:51:55,554 [INFO ]  ----------------
+2021-04-06 16:51:55,554 [INFO ]  Item 494 of 20000
+2021-04-06 16:51:55,554 [INFO ]  why do people still think the the world is flat
+2021-04-06 16:51:55,555 [INFO ]  [0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+2021-04-06 16:52:00,221 [INFO ]  ----------------
+2021-04-06 16:52:00,221 [INFO ]  Item 495 of 20000
+2021-04-06 16:52:00,221 [INFO ]  why was UNK UNK buried and not cremated
+2021-04-06 16:52:00,221 [INFO ]  [0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:52:04,649 [INFO ]  ----------------
+2021-04-06 16:52:04,649 [INFO ]  Item 496 of 20000
+2021-04-06 16:52:04,649 [INFO ]  why is manaphy angsty throughout in pokemon ranger and the temple of the sea
+2021-04-06 16:52:04,649 [INFO ]  [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1]
+2021-04-06 16:52:07,710 [INFO ]  ----------------
+2021-04-06 16:52:07,710 [INFO ]  Item 497 of 20000
+2021-04-06 16:52:07,710 [INFO ]  how are they going to finish the new star wars trilogy without carrie fisher
+2021-04-06 16:52:07,710 [INFO ]  [0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1]
+2021-04-06 16:52:11,534 [INFO ]  ----------------
+2021-04-06 16:52:11,534 [INFO ]  Item 498 of 20000
+2021-04-06 16:52:11,534 [INFO ]  have you ever had a UNK experience
+2021-04-06 16:52:11,534 [INFO ]  [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:52:15,688 [INFO ]  ----------------
+2021-04-06 16:52:15,688 [INFO ]  Item 499 of 20000
+2021-04-06 16:52:15,688 [INFO ]  how can i conquer the fear of death
+2021-04-06 16:52:15,688 [INFO ]  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+2021-04-06 16:52:19,719 [INFO ]  Total accepted: 6349.0

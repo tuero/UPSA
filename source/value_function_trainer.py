@@ -258,7 +258,7 @@ if __name__ == "__main__":
     config = option
 
     logger = logging.getLogger()
-    fhandler = logging.FileHandler(filename="logs/{}.log".format(option.exp_name))
+    fhandler = logging.FileHandler(filename="logs/{}/{}.log".format(option.exp_name, option.save_path[:-4]))
     formatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s]  %(message)s")
     fhandler.setFormatter(formatter)
     logger.addHandler(fhandler)

@@ -1,0 +1,27 @@
+Acceptance Percentage
+- Vanilla MCTS: (8100) = 81.00%
+- MCTS w/ Value Function:  (8061)  = 80.61%
+
+MCTS Vanilla
+Acceptance Percentage: (8100) = 81.00%
+sentence level bleu 0.06548949179752676
+sentence level ibleu 0.04247358141696091
+Evaluation with Avg
+        rouge-1:        P: 41.37*        R: 44.40        F1: 41.84
+        rouge-2:        P: 12.16*        R: 13.35        F1: 12.41
+        rouge-3:        P:  3.97         R:  4.30        F1:  4.00
+        rouge-4:        P:  1.39         R:  1.51        F1:  1.39
+        rouge-l:        P: 44.69         R: 47.38        F1: 45.25
+        rouge-w:        P: 34.12         R: 23.68        F1: 27.19
+
+MCTS Value Function
+Acceptance Percentage: (8100) = 80.61%
+sentence level bleu 0.06159494725218953
+sentence level ibleu 0.03923787681763654
+Evaluation with Avg
+        rouge-1:        P: 41.01*        R: 43.88        F1: 41.32
+        rouge-2:        P: 11.77*        R: 12.92        F1: 11.97
+        rouge-3:        P:  3.44         R:  3.86        F1:  3.52
+        rouge-4:        P:  1.12         R:  1.29        F1:  1.15
+        rouge-l:        P: 44.40         R: 46.91        F1: 44.80
+        rouge-w:        P: 33.85         R: 23.41        F1: 26.85

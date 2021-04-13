@@ -1,0 +1,9 @@
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/sa_default/sa.txt --mode bleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/sa_default/sa.txt --mode ibleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/sa_default/sa.txt --mode rouge
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_vanilla.txt --mode bleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_vanilla.txt --mode ibleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_vanilla.txt --mode rouge
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_valuefnc.txt --mode bleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_valuefnc.txt --mode ibleu
+python source/evaluate.py --reference_path quora-results/ref_1000.txt --input_path quora-results/c_origin_1000.txt --generated_path exps-sampling/mcts/mcts_valuefnc.txt --mode rouge

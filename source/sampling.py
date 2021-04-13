@@ -14,8 +14,10 @@ from utils import (
     appendtext,
     sample_from_candidate,
     normalize,
-    cut_from_point
+    cut_from_point,
+    sen2mat,
 )
+import logging
 import pickle as pkl
 from models import PTBModel
 from tensorflow.python.client import device_lib
@@ -37,6 +39,8 @@ ACTION_REPLACE = 0
 ACTION_INSERT = 1
 ACTION_DELETE = 2
 VALID_ACTIONS_DEFAULT = [ACTION_REPLACE, ACTION_INSERT, ACTION_DELETE]
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def run_epoch(sess, model, input, sequence_length, target=None, mode="train"):
@@ -109,24 +113,24 @@ def simulatedAnnealing(config):
     id2sen = dataclass.id2sen
 
     temperatures = option.C * (1.0 / 100) * np.array(list(range(option.sample_time + 1, 1, -1)))
-    print(temperatures)
+    logging.info(temperatures)
     option.temperatures = temperatures
 
     # Calculate the range to operate on
     idx_start = option.data_start
     idx_end = option.data_end if option.data_end != -1 else use_data.length
-    print("Operating in range of [{}, {})".format(idx_start, idx_end))
+    logging.info("Operating in range of [{}, {})".format(idx_start, idx_end))
 
     # Loop for each sentence
     count_accepted = 0.0
     for sen_id in range(idx_start, idx_end):
         sta_vec = sta_vec_list[sen_id]
         input, sequence_length, _ = use_data(1, sen_id)
-        print("----------------")
-        print("Item {} of {}".format(sen_id, use_data.length))
-        print(" ".join(id2sen(input[0])))  # Starting sentence before SA
+        logging.info("----------------")
+        logging.info("Item {} of {}".format(sen_id, use_data.length))
+        logging.info(" ".join(id2sen(input[0])))  # Starting sentence before SA
         # Binary indicies if word is keyword
-        print(sta_vec)
+        logging.info(sta_vec)
         maxV = -30
         # Repeat running SA for N_repeat times (I guess to find maximal result as SA is random)
         for k in range(option.N_repeat):
@@ -139,7 +143,7 @@ def simulatedAnnealing(config):
                 maxV = V
             appendtext(sampledsen, os.path.join(option.this_expsdir, option.save_path))
 
-    appendtext(str(count_accepted / (idx_end - idx_start)), os.path.join(option.this_expsdir, option.save_path))
+    logging.info('Total accepted: {}'.format(count_accepted))
 
 
 def compute_prob_sim_old(
@@ -214,7 +218,7 @@ def compute_fluency(session, mtest_forward, input_candidate, sequence_length_can
         tem = 1
         for j in range(sequence_length_candidate[0] - 1):
             tem *= prob_candidate_pre[i][j][input_candidate[i][j + 1]]
-        tem *= prob_candidate_pre[i][j + 1][option.dict_size + 1]
+        tem *= prob_candidate_pre[i][sequence_length_candidate[0] - 1][option.dict_size + 1]
         prob_candidate.append(tem)
     prob_candidate = np.array(prob_candidate)
 
@@ -263,8 +267,10 @@ def add_to_calibrated(word, calibrated_set, option):
 def check_to_skip(sequence_length, action, ind, num_steps):
     if action not in VALID_ACTIONS_DEFAULT:
         return True
+    if ind >= num_steps - 1:
+        return True
     # Action is insertion and sequence would be too long
-    if action == ACTION_INSERT and sequence_length >= num_steps:
+    if action == ACTION_INSERT and sequence_length >= num_steps - 1:
         return True
     # Action is delete and sequence isn't long enough to delete
     elif action == ACTION_DELETE and sequence_length <= 2 or ind == 0:
@@ -315,11 +321,15 @@ class ForwardModel:
         self.similarity_func = similarity_keyword_bleu_tensor if option.mode == "kw-bleu" else similarity_keyword
 
     # @Each node needs its own calibrated set?
-    def forward(self, current_sentence, sequence_length, calibrated_set, action, ind):
-        if ind >= sequence_length:
+    def forward(self, current_sentence, sequence_length, calibrated_set, action, ind, verbose=False):
+        if ind >= sequence_length - 1 :#or sequence_length >= 15:
             return current_sentence, sequence_length, calibrated_set
         # Generate the top N candidates sentences using forward/backward probabilities
         if action == ACTION_REPLACE or action == ACTION_INSERT:  # Insert or add
+            # print("---")
+            # print(current_sentence)
+            # print(sequence_length)
+            # print(ind)
             input_candidate, sequence_length_candidate = generate_N_candidates(
                 self.session,
                 self.mtest_forward,
@@ -340,8 +350,13 @@ class ForwardModel:
                 self.option.search_size,
                 self.option,
                 mode=action,
-                calibrated_set=list(calibrated_set),
+                calibrated_set=list(calibrated_set), verbose=verbose
             )
+            if verbose:
+                print('fw')
+                print(sequence_length)
+                print(current_sentence)
+                print(input_candidate)
 
         # Compute fluency scores for each candidate
         fluency_candidates = compute_fluency(
@@ -390,8 +405,8 @@ class TreeNode:
             for a, i in list(product(VALID_ACTIONS_DEFAULT, range(sequence_length)))
             if not check_to_skip(sequence_length, a, i, max_len)
         ]
-        random.shuffle(self.valid_actions)
-        self.valid_actions = self.valid_actions[:10]
+        # random.shuffle(self.valid_actions)
+        # self.valid_actions = self.valid_actions[:15]
         self.action_seq = action_seq
         self.parent = parent
         self.isTerminal = False
@@ -399,6 +414,9 @@ class TreeNode:
         self.numVisits = 0
         self.totalReward = 0
         self.children = {}
+        self.sentence = None
+        self.sentence_length = None
+        self.calibrated_set = None
 
 
 EXPLORATION_CONSTANT = np.sqrt(2)
@@ -409,7 +427,7 @@ def UCT(node):
     best_nodes = []
     denom = np.log(node.numVisits)
     for child in node.children.values():
-        node_value = (child.totalReward / child.numVisits) + EXPLORATION_CONSTANT * np.sqrt(denom / child.numVisits)
+        node_value = (child.totalReward / (child.numVisits + 1)) + EXPLORATION_CONSTANT * np.sqrt(denom / (child.numVisits + 1))
         if node_value > best_value:
             best_value = node_value
             best_nodes = [child]
@@ -431,7 +449,7 @@ def select_most_visited(node):
     best_count = -1
     best_nodes = []
     for child in node.children.values():
-        visit_count = child.numVisits()
+        visit_count = child.numVisits
         if visit_count > best_count:
             best_count = visit_count
             best_nodes = [child]
@@ -444,7 +462,7 @@ def select_best(node):
     best_value = -1
     best_nodes = []
     for child_action, child_node in node.children.items():
-        node_value = child_node.totalReward / child_node.numVisits
+        node_value = child_node.totalReward / (child_node.numVisits + 1)
         if node_value > best_value:
             best_value = node_value
             best_nodes = [child_node]
@@ -465,7 +483,10 @@ class MCTS:
         rollout_depth=3,
         value_fnc=None,
         dataset_mean=None,
-        dataset_std=None
+        dataset_std=None,
+        id2sen=None,
+        emb_word=None,
+        option=None,
     ):
         self._selection_policy = selection_policy
         self._rollout_policy = rollout_policy
@@ -477,6 +498,10 @@ class MCTS:
         self._value_fnc = value_fnc
         self._dataset_mean = dataset_mean
         self._dataset_std = dataset_std
+        self._id2sen = id2sen
+        self._emb_word = emb_word
+        self._option = option
+        logging.info('Using exploration constant {}'.format(EXPLORATION_CONSTANT))
 
     def search(self, current_sentence, sequence_length, calibrated_set, root=None):
         self.current_sentence = current_sentence
@@ -485,6 +510,10 @@ class MCTS:
         self.max_depth = 0
         if root is None:
             self.root = TreeNode(sequence_length[0], self._fm.option.num_steps, parent=None, action_seq=[])
+            self.root.sentence_length = sequence_length
+            self.root.sentence = deepcopy(current_sentence)
+            self.root.calibrated_set = deepcopy(calibrated_set)
+            self.root.numVisits = 1
         else:
             self.root = root
 
@@ -493,30 +522,29 @@ class MCTS:
             self.singleRound()
 
         # Select best child
-        best_child = select_best(self.root)
+        best_child = select_most_visited(self.root)
+        # best_child = select_best(self.root)
         action, idx = best_child.action_seq[-1]
-        print("max_depth {}".format(self.max_depth))
+        logging.info("max_depth {}".format(self.max_depth))
+        # return best_child.sentence, best_child.sentence_length, best_child.calibrated_set, action, idx
         return action, idx, best_child
 
     def singleRound(self):
-        node = self.selectNode(self.root)
+        if self._value_fnc is None:
+            node = self.selectNode(self.root)
+        else:
+            node = self._select(self.root)
         reward = self.rollout(node)
         self.backpropogate(node, reward)
 
     def selectNode(self, node):
         count = 0
-        current_sentence = self.current_sentence
-        sequence_length = self.sequence_length
-        calibrated_set = deepcopy(self.calibrated_set)
         while not node.isTerminal:
             count += 1
             if count > self.max_depth:
                 self.max_depth = count
             if node.isFullyExpanded:
                 node = self._selection_policy(node)
-                current_sentence, sequence_length, calibrated_set = self._fm.forward(
-                    current_sentence, sequence_length, calibrated_set, action, idx
-                )
             else:
                 return self.expand(node)
         return node
@@ -524,14 +552,9 @@ class MCTS:
     def rollout(self, node):
         total_reward = 0
         for i in range(self._rollout_expected):
-            current_sentence = self.current_sentence
-            sequence_length = self.sequence_length
-            calibrated_set = deepcopy(self.calibrated_set)
-            # Bring the state to current position
-            for action, idx in node.action_seq:
-                current_sentence, sequence_length, calibrated_set = self._fm.forward(
-                    current_sentence, sequence_length, calibrated_set, action, idx
-                )
+            current_sentence = deepcopy(node.sentence)
+            sequence_length = node.sentence_length
+            calibrated_set = deepcopy(node.calibrated_set)
             # Perform random rollout
             for _ in range(self._rollout_depth):
                 current_sentence, sequence_length, calibrated_set = self._rollout_policy(
@@ -545,6 +568,8 @@ class MCTS:
             if (action, idx) not in node.children:
                 # Apply action to current sentence
                 child_node = TreeNode(self.sequence_length[0], self._fm.option.num_steps, node, [(action, idx)])
+                # Bring sentence forward for child and store
+                self._bring_node_forward(child_node)
                 node.children[(action, idx)] = child_node
                 if len(node.valid_actions) == len(node.children):
                     node.isFullyExpanded = True
@@ -552,27 +577,54 @@ class MCTS:
 
         raise Exception("No valid children, shouldn't get here.")
 
+    def _bring_node_forward(self, node):
+        action, idx = node.action_seq[-1]
+        parent = node.parent
+        current_sentence, sequence_length, calibrated_set = self._fm.forward(
+            deepcopy(parent.sentence), parent.sentence_length, deepcopy(parent.calibrated_set), action, idx
+        )
+        node.sentence = current_sentence
+        node.sentence_length = sequence_length
+        node.calibrated_set = calibrated_set
+
     def _expand(self, node):
-        child_values = self._value_fnc()
-        child_values = torch.exp((child_values * self._dataset_std) + self._dataset_mean).tolist()
-        # generate all children
-        # child.count = 0
-        # child.value = policy_value
-        # child.isFullyExpanded = False
-        # node.isFullyExpanded = True
-        pass
+        X = (
+            torch.tensor(sen2mat(node.sentence[0], self._id2sen, self._emb_word, self._option))
+            .float()
+            .to(device)
+            .unsqueeze(0)
+        )
+        child_values = self._value_fnc(X).squeeze(0).cpu().detach().numpy().astype('float64')
+        child_values = np.exp((child_values * self._dataset_std) + self._dataset_mean)
+        for action, idx in node.valid_actions:
+            child_node = TreeNode(self.sequence_length[0], self._fm.option.num_steps, node, [(action, idx)])
+            child_node.numVisits = 0
+            child_node.totalReward = child_values[action * 15 + idx]
+            node.children[(action, idx)] = child_node
+        
+        # Bring node forward
+        node.isFullyExpanded = True
+        child_node = select_best(node)
+        self._bring_node_forward(child_node)
+        # child_node.totalReward = 0.0
+        return child_node
 
     def _select(self, node):
+        count = 0
         while not node.isTerminal:
+            count += 1
+            if count > self.max_depth:
+                self.max_depth = count
+
             if node.isFullyExpanded:
                 node = self._selection_policy(node)
             elif node.numVisits == 0:
+                self._bring_node_forward(node)
+                # node.totalReward = 0.0
                 return node
             else:
-                return self.expand(node)
+                return self._expand(node)
         return node
-
-        pass
 
     def backpropogate(self, node, reward):
         while node is not None:
@@ -626,27 +678,36 @@ def runMCTS(config):
     # Calculate the range to operate on
     idx_start = option.data_start
     idx_end = option.data_end if option.data_end != -1 else use_data.length
-    print("Operating in range of [{}, {})".format(idx_start, idx_end))
+    logging.info("Operating in range of [{}, {})".format(idx_start, idx_end))
+
+    similarity_func = similarity_keyword_bleu_tensor if option.mode == "kw-bleu" else similarity_keyword
 
     # Set value function properties
     value_fnc = dataset_mean = dataset_std = None
     if option.use_val_function:
-        value_fnc = torch.load('./data/value_function_model.pt')
-        dataset = np.load('./data/quoradata/value_data.npy', allow_pickle=False)
-        dataset_mean = np.mean(dataset)
-        dataset_std = np.std(dataset)
+        value_fnc = LSTM(300, 256, 45, num_layers=1).to(device)
+        value_fnc.load_state_dict(torch.load("./data/value_function_model.pt"))
+        value_fnc.eval()
+        dataset = np.load("./data/quoradata/value_data.npy", allow_pickle=False)
+        dataset_mean = np.mean(np.log(dataset))
+        dataset_std = np.std(np.log(dataset))
+        logging.info("dataset stats: mu={}, sigma={}".format(dataset_mean, dataset_std))
         del dataset
 
+    global EXPLORATION_CONSTANT
+    EXPLORATION_CONSTANT = option.exploration_constant
+
     # Loop for each sentence
+    total_accepted = 0
     for sen_id in range(idx_start, idx_end):
         sta_vec = sta_vec_list[sen_id]
         input_original, sequence_length, _ = use_data(1, sen_id)
-        print("----------------")
-        print("Item {} of {}".format(sen_id, use_data.length))
+        logging.info("----------------")
+        logging.info("Item {} of {}".format(sen_id, use_data.length))
         # Starting sentence before SA
-        print(" ".join(id2sen(input_original[0])))
+        logging.info(" ".join(id2sen(input_original[0])))
         # Binary indicies if word is keyword
-        print(sta_vec)
+        logging.info(sta_vec)
 
         calibrated_set = set([x for x in input_original[0] if x < option.dict_size])
 
@@ -654,23 +715,104 @@ def runMCTS(config):
             input_original[0], sta_vec, id2sen, emb_word, session, mtest_forward, mtest_backward, option
         )
         fm = ForwardModel(input_original[0], sta_vec, id2sen, emb_word, session, mtest_forward, mtest_backward, option)
-        ts = MCTS(UCT, rollout_random, scorer, fm, iteration_limit=40, rollout_expected=20, rollout_depth=3)
+        ts = MCTS(
+            UCT,
+            rollout_random,
+            scorer,
+            fm,
+            iteration_limit=100,
+            rollout_expected=3,
+            rollout_depth=2,
+            value_fnc=value_fnc,
+            dataset_mean=dataset_mean,
+            dataset_std=dataset_std,
+            id2sen=id2sen,
+            emb_word=emb_word,
+            option=option,
+        )
         root = None
 
         current_sentence = deepcopy(input_original)
-        for i in range(5):
-            print("loop {}".format(i))
+        count_accepted = 0
+        for i in range(option.sample_time):
+            input_original = current_sentence[0]
+            temperature = option.temperatures[len(option.temperatures) - (option.sample_time + 1) + i]
+            logging.info("mcts iteration loop {}".format(i))
             start = time.time()
             action, idx, root = ts.search(current_sentence, sequence_length, calibrated_set, None)
-            current_sentence, sequence_length, calibrated_set = fm.forward(
-                current_sentence, sequence_length, calibrated_set, action, idx
+            if check_to_skip(sequence_length, action, idx, option.num_steps):
+                continue
+            prob_old_prob, _ = compute_prob_sim_old(
+                session, mtest_forward, current_sentence, input_original,
+                sequence_length, similarity_func, sta_vec, id2sen, emb_word, None, option,
             )
-            end = time.time()
-            print("time taken: {}".format(end - start))
-            print("action {} idx {}".format(action, idx))
-            print(" ".join(id2sen(current_sentence[0])))
+            # Generate the top N candidates sentences using forward/backward probabilities
+            if action == ACTION_REPLACE or action == ACTION_INSERT:  # Insert or add
+                input_candidate, sequence_length_candidate = generate_N_candidates(
+                    session, mtest_forward, mtest_backward, current_sentence, sequence_length,
+                    idx, option, action, list(calibrated_set),
+                )
+            elif action == ACTION_DELETE:  # Delete
+                input_candidate, sequence_length_candidate = generate_candidate_input_calibrated(
+                    current_sentence, sequence_length, idx, None, option.search_size,
+                    option, mode=action, calibrated_set=list(calibrated_set),
+                )
 
+            # Compute fluency scores for each candidate
+            fluency_candidates = compute_fluency(session, mtest_forward, input_candidate, sequence_length_candidate, option)
+            fluency_candidate = fluency_candidates[0] if action == 2 else fluency_candidates
+
+            # Compute the semantic preservation and expression diversity
+            similarity_candidate = compute_semantic_preservation_expression_diversity(
+                input_candidate, input_original, sta_vec, id2sen, emb_word, option, None, similarity_func
+            )
+
+            # Compute scores for candidates
+            prob_candidate = fluency_candidates * similarity_candidate
+
+            # Sample candidate from top N candidates
+            # If action is delete, we only have one candiate, we just get back the single input candidate
+            candidate_prob, candidate_idx = sample_candidate(prob_candidate)
+
+            # Find acceptance probability
+            V_new, V_old, acceptance_prob = acceptance_proposal(
+                candidate_prob, prob_old_prob, sequence_length_candidate[0], sequence_length, temperature
+            )
+
+            # If we don't accept, then move onto next trial
+            if not is_accepted(acceptance_prob):
+                continue
+
+            count_accepted += 1
+            total_accepted += 1
+
+            # Otherwise, set current sentence, add removed words to calibrated set and continue
+            if action == ACTION_REPLACE and word_in_dict(input_candidate[candidate_idx][idx], option):
+                add_to_calibrated(current_sentence[0][idx + 1], calibrated_set, option)
+                current_sentence = input_candidate[candidate_idx : candidate_idx + 1]
+            elif action == ACTION_INSERT and word_in_dict(input_candidate[candidate_idx][idx], option):
+                current_sentence = input_candidate[candidate_idx : candidate_idx + 1]
+                sequence_length += 1
+            elif action == ACTION_DELETE:
+                add_to_calibrated(current_sentence[0][idx], calibrated_set, option)
+                current_sentence = input_candidate[candidate_idx : candidate_idx + 1]
+                sequence_length -= 1
+
+            # -----
+            # current_sentence, sequence_length, calibrated_set, action, idx = ts.search(
+            #     current_sentence, sequence_length, calibrated_set, None
+            # )
+            # -----
+            end = time.time()
+            logging.debug("time taken: {}".format(end - start))
+            logging.info("action {} idx {}".format(action, idx))
+            logging.info(" ".join(id2sen(current_sentence[0])))
+            logging.info("")
+
+        logging.info('Accepted: {}'.format(count_accepted))
         appendtext(" ".join(id2sen(current_sentence[0])), os.path.join(option.this_expsdir, option.save_path))
+
+    logging.info('Total accepted: {}'.format(total_accepted))
 
 
 def sa(current_sentence, sequence_length, sta_vec, id2sen, emb_word, session, mtest_forward, mtest_backward, option):
@@ -681,7 +823,6 @@ def sa(current_sentence, sequence_length, sta_vec, id2sen, emb_word, session, mt
 
     similaritymodel = None
     input_original = current_sentence[0]
-    # sta_vec_original = [x for x in sta_vec]
     calibrated_set = set([x for x in current_sentence[0] if x < option.dict_size])
 
     count_accepted = 0

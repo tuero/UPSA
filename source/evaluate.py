@@ -220,7 +220,8 @@ def evaluate_rouge(reference_path, generated_path, multi=True):
     actual_word_lists = actual_word_lists[:len(generated_word_lists)]
     print(actual_word_lists[0],len(generated_word_lists))
 
-    for aggregator in ['Avg', 'Best', 'Individual']:
+    # for aggregator in ['Avg', 'Best', 'Individual']:
+    for aggregator in ['Avg', 'Best']:
         print('Evaluation with {}'.format(aggregator))
         apply_avg = aggregator == 'Avg'
         apply_best = aggregator == 'Best'

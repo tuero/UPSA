@@ -1,3 +1,4 @@
+Whole:
 sentence level bleu 0.18678822512978532
 sentence level ibleu 0.12348256158619603
 Evaluation with Avg
@@ -7,3 +8,16 @@ Evaluation with Avg
         rouge-4:        P: 11.26        R: 11.81        F1: 11.23
         rouge-l:        P: 58.51        R: 61.64        F1: 59.31
         rouge-w:        P: 48.41        R: 33.31        F1: 38.64
+
+
+1000:
+Acceptance Percentage: (6364 + 6349 + 6387 + 6360) = 50.92%
+sentence level bleu 0.19646977657358566
+sentence level ibleu 0.12854333227979547
+Evaluation with Avg
+        rouge-1:        P: 57.60*        R: 60.38        F1: 58.05
+        rouge-2:        P: 32.38*        R: 34.08        F1: 32.63
+        rouge-3:        P: 19.41         R: 20.47        F1: 19.52
+        rouge-4:        P: 11.97         R: 12.65        F1: 12.01
+        rouge-l:        P: 59.81         R: 62.21        F1: 60.32
+        rouge-w:        P: 49.60         R: 33.63        F1: 39.33

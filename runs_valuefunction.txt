@@ -1,0 +1,2 @@
+python source/value_function_trainer.py --exps_dir exps-sampling --exp_name valuefunction --save_path train_val.txt --use_data_path data/quoradata/value_train.txt --mode kw-bleu --data_start 0 --data_end 1
+python source/value_function_trainer.py --exps_dir exps-sampling --exp_name valuefunction --save_path train_full.txt --use_data_path data/quoradata/value_train.txt --mode kw-bleu --data_start 0 --data_end 1
